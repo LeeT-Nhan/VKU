@@ -1003,7 +1003,7 @@
   transform: translateY(-50%);
   width: 50px;
   height: 100%;
-  background-image: url("/assets/image/huyhieu_ss.png");
+  background-image: url("../assets/image/huyhieu_ss.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1538,7 +1538,7 @@
 }
 
 .section-2 .inner-head {
-  background-image: url("/assets/image/Index/ss2.png");
+  background-image: url("../assets/image/Index/ss2.png");
   background-size: cover;
   background-position: center;
   text-align: left;
@@ -1967,7 +1967,7 @@
   width: 1170px;
   max-width: 11500px;
   height: 100%;
-  background-image: url("/assets/image/Index/BG_ThanhTuu.png");
+  background-image: url("../assets/image/Index/BG_ThanhTuu.png");
   border-radius: 12px;
   overflow: hidden;
 }
@@ -2586,7 +2586,7 @@
 
 /* Section 1 */
 .page-blog-header {
-  background-image: url("/assets/image/BLOG/BG_section1.png");
+  background-image: url("../assets/image/BLOG/BG_section1.png");
   background-size: cover; /* Phủ toàn bộ */
   background-position: center; /* Canh giữa */
   background-repeat: no-repeat; /* Không lặp lại */
@@ -3025,7 +3025,7 @@
 /* End ss4 */
 /* ss5 */
 .section-5_blog {
-  background: url("/assets/image/bg_HHTS_full.png") no-repeat center center;
+  background: url("../assets/image/bg_HHTS_full.png") no-repeat center center;
   background-size: cover;
   color: #ffffff;
   position: relative;
@@ -3212,7 +3212,7 @@
   display: flex;
   align-items: center;
   /* Thay url(...) bằng ảnh background đã ghép sẵn cards của bạn */
-  background: url("/assets/image/BLOG/ss7.png") no-repeat center center/cover;
+  background: url("../assets/image/BLOG/ss7.png") no-repeat center center/cover;
   border-radius: 8px;
   padding: 40px;
   overflow: hidden;
@@ -3260,7 +3260,7 @@
 /* end ss7 */
 /* ss8 */
 .section-8 {
-  background: url("/assets/image/bg_HHTS_full_180.png") no-repeat center center;
+  background: url("../assets/image/bg_HHTS_full_180.png") no-repeat center center;
   background-size: cover;
   color: #ffffff;
   position: relative;
