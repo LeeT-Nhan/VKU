@@ -1,0 +1,2459 @@
+/* Header  */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Đảm bảo header hiển thị phía trên các phần tử khác */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ cho header */
+}
+.header .inner-header {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  height: 72px;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  justify-content: space-between;
+}
+
+.header .inner-header .inner-logo {
+  width: 130px;
+}
+
+.header .inner-header .inner-logo img {
+  width: 100%;
+  height: auto; /* Giữ tỷ lệ khung hình */
+}
+
+.header .inner-header .inner-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.header .inner-header .inner-box {
+  padding: 15px;
+  margin: 0;
+  margin-right: 15px; /* Khoảng cách giữa chữ và icon */
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.header .inner-header .inner-box p {
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.header .inner-header .inner-box i {
+  font-size: 14px; /* chọn kích thước phù hợp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.header .inner-header .inner-box:hover .inner-tag-menu {
+  color: var(
+    --font-color
+  ); /* Màu xanh khi hover, giống với màu của nút tìm kiếm */
+}
+
+.header .inner-header .inner-box:hover i {
+  color: var(--font-color); /* Có thể thêm màu xanh cho cả icon khi hover */
+}
+
+/* Styling nút đăng ký và đăng nhập */
+.header .inner-header .inner-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa 2 nút */
+  margin-left: auto; /* Đẩy các nút sang phải */
+  padding-right: 15px;
+}
+
+/* Nút đăng ký - viền xanh */
+.header .inner-header .inner-btn .sigin-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: white;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header .inner-header .inner-btn .sigin-btn:hover {
+  background-color: #f0fff0;
+}
+
+/* Nút đăng nhập - nền xanh */
+.header .inner-header .inner-btn .sigup-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--font-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 177, 79, 0.2);
+}
+
+.inner-header .inner-btn .sigup-btn:hover {
+  background-color: var(--hover-color);
+  /* box-shadow: 0 2px 10px rgba(0, 177, 79, 0.4); */
+}
+
+/* Thêm hiệu ứng xoay cho icon dropdown trong header */
+.header .inner-header .inner-box i {
+  transition: transform 0.3s ease;
+}
+
+.header .inner-header .inner-box:hover .i-header {
+  transform: rotate(180deg); /* Xoay mũi tên 180 độ khi hover */
+}
+
+/* Dropdown Menu */
+.inner-box {
+  position: relative;
+}
+
+.inner-box .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1000; /* Đặt z-index cao hơn banner */
+}
+
+.inner-box:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-section {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.dropdown-section p {
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.dropdown-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section ul li {
+  margin: 14px;
+}
+
+.dropdown-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.dropdown-section ul li a:hover {
+  color: var(--font-color);
+  transform: translateX(5px);
+}
+
+.dropdown-section ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+  width: 20px;
+  color: #555;
+}
+
+.dropdown-section ul li a:hover i {
+  color: #00b14f;
+}
+
+.header .inner-text-dropdown {
+  font-size: 14px;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-right: 1px solid #ddd;
+  gap: 6px;
+  justify-content: space-between;
+}
+/* submenu-right  */
+
+/* submenu-right-2col  */
+/* Dropdown Menu Styling */
+.inner-box {
+  position: relative;
+}
+
+.inner-box .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 600px; /* Giữ chiều rộng tối thiểu */
+  width: max-content; /* Cho phép chiều rộng mở rộng theo nội dung */
+  max-width: 800px; /* Giới hạn chiều rộng tối đa nếu cần */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1000;
+}
+
+.inner-box:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-section {
+  flex: 1;
+  padding: 28 15px;
+}
+
+.dropdown-section:first-child {
+  padding-left: 0;
+}
+
+.dropdown-section:last-child {
+  padding-right: 0;
+}
+
+.dropdown-section p {
+  /* Tiêu đề của mỗi section trong dropdown */
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  white-space: nowrap; /* Không cho phép xuống dòng */
+  overflow: hidden; /* Ẩn phần vượt quá */
+  text-overflow: ellipsis; /* Hiển thị dấu ... nếu cần */
+  padding-bottom: 0; /* Loại bỏ padding dưới */
+}
+
+.dropdown-section ul li {
+  margin-bottom: 10px; /* Khoảng cách đồng nhất */
+  margin: 0 0 10px 0; /* Reset margin và đặt lại margin-bottom */
+  padding: 0; /* Reset padding */
+}
+/* Thêm CSS đặc biệt cho dropdown Công cụ để các mục căn thẳng hàng */
+
+/* Styling cho các danh sách ul li thông thường trong dropdown */
+.dropdown-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các mục li */
+}
+
+.dropdown-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px; /* Padding cho các mục link */
+  border-radius: 6px; /* Bo tròn góc cho hiệu ứng hover */
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  position: relative; /* Cho ::after nếu có */
+}
+
+.dropdown-section ul li a:hover {
+  color: var(--font-color);
+  background-color: #e9f5e9; /* Nền xanh nhạt khi hover */
+  transform: translateX(5px);
+}
+
+.dropdown-section ul li a i {
+  /* Icon bên trái của các mục li */
+  margin-right: 10px;
+  font-size: 14px;
+  width: 18px; /* Đảm bảo icon có độ rộng nhất định */
+  text-align: center;
+  color: #555; /* Màu icon mặc định */
+  transition: color 0.2s ease;
+}
+
+.dropdown-section ul li a:hover i {
+  color: var(--font-color); /* Màu icon khi hover */
+}
+
+/* Tiêu đề đặc biệt (ví dụ: "Tạo CV" trong dropdown "Tạo CV") */
+.dropdown-header-special {
+  color: #333 !important; /* Ghi đè màu mặc định của p */
+  font-weight: bold !important;
+  font-size: 14px !important;
+  text-transform: none !important; /* Bỏ uppercase nếu không muốn */
+}
+
+/* Tiêu đề phụ (ví dụ: "Mẫu CV theo vị trí ứng tuyển") */
+.dropdown-subheader {
+  color: #555 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  margin-top: 20px; /* Khoảng cách với phần tử phía trên */
+  text-transform: none !important;
+}
+
+/* --- Style CỤ THỂ cho các mục trong ul.dropdown-submenu-right (cột bên phải của dropdown "Tạo CV") --- */
+.dropdown-section ul.dropdown-submenu-right li a {
+  padding: 8px 10px;
+  border-radius: 7px;
+
+  height: 37px;
+}
+
+.dropdown-section ul.dropdown-submenu-right li a:hover {
+  background-color: #e9f5e9;
+  color: var(--font-color);
+}
+
+.dropdown-section ul.dropdown-submenu-right li a:hover > i:first-child {
+  color: var(--font-color);
+}
+
+.dropdown-section ul.dropdown-submenu-right li a::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Solid";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+.dropdown-section ul.dropdown-submenu-right li a:hover::after {
+  opacity: 1;
+}
+
+/* --- Styling cho phần "Công cụ" với layout Grid --- */
+.header .dropdown-section .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Các cột tự điều chỉnh chiều rộng */
+  gap: 10px 25px; /* Khoảng cách hàng và cột (tăng khoảng cách cột) */
+  width: 100%;
+  margin-top: 0; /* Đảm bảo không có margin-top cho mục đầu tiên */
+}
+
+.header .tool-item {
+  /* Các mục trong tools-grid */
+  display: flex;
+  align-items: flex-start; /* Căn icon với dòng đầu tiên của text */
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  /* Tăng padding-right lên 30px để đảm bảo đủ không gian cho mũi tên */
+  padding: 10px 40px 10px 12px;
+  border-radius: 7px;
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap; /* Ngăn văn bản xuống dòng */
+  line-height: 1.4;
+}
+
+.header .tool-item i {
+  /* Icon bên trái của tool-item */
+  margin-right: 8px;
+  font-size: 14px;
+  width: 20px;
+  color: #555;
+  text-align: center;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px; /* Điều chỉnh để icon căn tốt hơn với text */
+}
+
+.header .tool-item:hover {
+  background-color: #e9f5e9; /* Nền xanh nhạt khi hover */
+  color: var(--font-color); /* Màu chữ khi hover */
+  transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ */
+}
+
+.header .tool-item:hover i {
+  color: var(--font-color); /* Màu icon khi hover */
+}
+
+/* Mũi tên bên phải khi hover cho tool-item */
+.header .tool-item::after {
+  content: "\f061"; /* Font Awesome arrow-right icon */
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Solid";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+.tool-item:hover::after {
+  opacity: 1;
+}
+/* End of submenu-right-2col  */
+
+/* Header cũng cần z-index cao */
+.header .inner-header {
+  z-index: 1000; /* Đảm bảo header có z-index cao */
+}
+
+/* Chỉnh giá trị z-index của banner */
+.banner-wrapper {
+  margin-top: 72px; /* Bằng với chiều cao của header */
+  position: relative;
+  z-index: 10; /* Đặt z-index thấp hơn dropdown */
+}
+
+/* --- Style CỤ THỂ cho các mục trong ul.dropdown-submenu-right --- */
+
+/* Style cơ bản cho link trong dropdown-submenu-right (có thể kế thừa hoặc ghi đè) */
+.dropdown-section ul.dropdown-submenu-right li a {
+  /* Nếu muốn padding khác, có thể đặt ở đây */
+  padding: 10px 12px;
+  border-radius: 7px; /* Bo tròn góc */
+}
+
+/* Hiệu ứng hover CỤ THỂ cho các mục trong dropdown-submenu-right */
+.dropdown-section ul.dropdown-submenu-right li a:hover {
+  background-color: #e9f5e9; /* Màu nền xanh lá cây rất nhạt khi hover */
+  color: var(
+    --font-color
+  ); /* Màu chữ khi hover (font-color là màu xanh lá cây đậm) */
+  /* transform: translateX(5px); /* Đã được kế thừa từ rule chung */
+}
+
+/* Style CỤ THỂ cho icon bên trái trong dropdown-submenu-right khi hover */
+.dropdown-section ul.dropdown-submenu-right li a:hover > i:first-child {
+  color: var(--font-color); /* Màu icon khi hover */
+}
+
+/* Mũi tên hiển thị bên phải khi hover CỤ THỂ cho các mục trong dropdown-submenu-right */
+
+
+.dropdown-section ul.dropdown-submenu-right li a:hover::after {
+  opacity: 1; /* Hiện mũi tên khi hover */
+}
+
+.dropdown-section .dropdown-header-special ul li a:hover::after{
+  opacity: 1; /* Ẩn mũi tên khi hover */
+}
+
+/* CSS cho phần Bài viết nổi bật trong dropdown Cẩm nang nghề nghiệp */
+
+/* Điều chỉnh kích thước dropdown menu cho Cẩm nang nghề nghiệp */
+.inner-box:nth-child(4) .dropdown-menu {
+  min-width: 780px; /* Tăng độ rộng để hiển thị cả bài viết */
+  max-width: 900px;
+}
+
+.inner-box:nth-child(4) .dropdown-menu .dropdown-section:first-child {
+  max-width: 280px; /* Bạn có thể điều chỉnh giá trị này cho phù hợp */
+  flex-shrink: 0; /* Ngăn không cho cột này co lại quá nhiều nếu nội dung cột phải lớn */
+}
+
+/* Đảm bảo cột bên phải (BÀI VIẾT NỔI BẬT) có thể mở rộng */
+.inner-box:nth-child(4) .dropdown-menu .dropdown-section:last-child {
+  flex-grow: 1; /* Cho phép cột này chiếm không gian còn lại */
+  min-width: 0; /* Quan trọng để nội dung trong flex item có thể co lại đúng cách */
+  max-width: 420px;
+}
+
+/* Đảm bảo nội dung văn bản trong bài viết nổi bật có thể xuống dòng */
+.featured-article .article-content h3,
+.featured-article .article-content p {
+  word-break: break-word; /* Cho phép ngắt từ nếu cần để xuống dòng */
+  white-space: normal; /* Đảm bảo văn bản có thể xuống dòng tự nhiên */
+  /* Các thuộc tính -webkit-line-clamp vẫn sẽ giới hạn số dòng sau khi đã xuống dòng */
+}
+
+/* Style cho container bài viết nổi bật */
+.featured-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Style cho từng bài viết */
+.featured-article {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-article:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style cho phần hình ảnh của bài viết */
+.article-image {
+  width: 120px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style cho phần nội dung của bài viết */
+.article-content {
+  flex: 1;
+}
+
+.article-content h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.article-content p {
+  font-size: 12px !important;
+  color: #666 !important;
+  margin: 0;
+  font-weight: normal !important;
+  text-transform: none !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal !important; /* Cho phép xuống dòng */
+}
+
+/* Link xem thêm */
+.view-more {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.view-more a {
+  font-size: 13px;
+  color: var(--font-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.view-more a:hover {
+  color: var(--hover-color, #00943f);
+}
+
+.view-more a i {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.view-more a:hover i {
+  transform: translateX(3px);
+}
+
+/* Thêm CSS cho mũi tên bên phải khi hover cho các mục trong dropdown "Cẩm nang nghề nghiệp" */
+
+.dropdown-section ul.dropdown-submenu-right li a::after,
+.dropdown-section .dropdown-header-special li a::after {
+  content: "\f061"; /* Mã Unicode cho icon fa-arrow-right của Font Awesome */
+  font-family: "Font Awesome 6 Free"; /* Sửa font family */
+  font-weight: 900; /* Cần thiết cho icon solid */
+  position: absolute;
+  right: 12px; /* Vị trí từ mép phải */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Ẩn mặc định */
+  transition: opacity 0.2s ease;
+  color: var(--font-color); /* Màu mũi tên */
+}
+
+/* Hiển thị mũi tên khi hover */
+.dropdown-section ul.dropdown-submenu-right li a:hover::after,
+.dropdown-section .dropdown-header-special li a:hover::after {
+  opacity: 1;
+}
+
+/* Thêm mũi tên cho section thứ hai */
+.dropdown-section ul li a::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+/* .dropdown-section ul li a:hover::after {
+  opacity: 1;
+} */
+
+.dropdown-section ul li a::after:hover
+{
+  opacity: 1;
+}
+
+/* Đảm bảo tất cả các link trong dropdown có position relative */
+.dropdown-section ul li a {
+  position: relative;
+  padding-right: 30px; /* Để có không gian cho mũi tên */
+}
+
+
+/* Đảm bảo không gian đủ cho các mục trong dropdown "Cẩm nang nghề nghiệp" */
+.inner-box:nth-child(4) .dropdown-section:first-child ul li a {
+  padding-right: 30px !important; /* Ghi đè padding right cần thiết */
+}
+
+/* Thêm mũi tên cho dropdown-header-special */
+.dropdown-section .dropdown-header-special ul li a::after {
+  content: "\f061"; /* Font Awesome arrow-right icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+/* Đảm bảo các thẻ a trong dropdown-header-special có position relative */
+.dropdown-section .dropdown-header-special ul li a {
+  position: relative;
+  padding-right: 30px; /* Tạo không gian cho mũi tên */
+}
+
+/* ...existing code... */
+
+/* 1. Đảm bảo các thẻ <a> được thiết lập để định vị tuyệt đối cho ::after */
+.dropdown-section > ul > li > a {
+  position: relative; /* Quan trọng cho việc định vị ::after */
+  padding-right: 30px; /* Tạo không gian cho icon mũi tên, điều chỉnh nếu cần */
+  /* Các style khác cho thẻ a của bạn */
+}
+
+/* 2. Định nghĩa pseudo-element ::after cho TẤT CẢ các thẻ <a> liên quan */
+/* Quy tắc này áp dụng cho các liên kết trong bất kỳ <ul> nào là con trực tiếp của .dropdown-section */
+.dropdown-section > ul > li > a::after {
+  content: "\f061"; /* Mã Unicode cho icon fa-arrow-right của Font Awesome */
+  font-family: "Font Awesome 6 Free"; /* Đảm bảo đúng tên font cho Font Awesome 6 */
+  font-weight: 900; /* Bắt buộc cho các icon solid của Font Awesome */
+  position: absolute;
+  right: 12px; /* Điều chỉnh vị trí từ mép phải nếu cần */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Ẩn theo mặc định */
+  transition: opacity 0.2s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+  color: var(--font-color); /* Màu của mũi tên, hoặc màu bạn muốn */
+  pointer-events: none; /* Để mũi tên không cản trở việc click vào link */
+}
+
+/* 3. Hiển thị pseudo-element ::after khi hover vào thẻ <a> */
+.dropdown-section > ul > li > a:hover::after {
+  opacity: 1; /* Hiện mũi tên khi hover */
+}
+
+/* ...existing code... */
+
+/* End of header  */
+
+/* SEARCH BAR  */
+/* SEARCH BAR */
+.search-bar {
+  margin-top: 70px;
+  background-image: url("../image/bg_jobdental.png");
+  padding: 10px;
+  position: sticky;
+  z-index: 998;
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 260px;
+}
+
+.search-bar .container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 90px 15px;
+}
+
+.search-bar .box-search {
+  display: flex;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 50px;
+}
+
+/* Phần danh mục ngành nghề */
+.search-bar .category {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 200px;
+  border-right: 1px solid #e0e0e0;
+  padding: 0 15px;
+}
+
+/* Ẩn hoàn toàn select gốc - đã được xử lý bằng JavaScript */
+.search-bar .category .select-catgory {
+  display: none; /* Ẩn hoàn toàn select gốc */
+}
+
+.search-bar .category i:first-child {
+  color: #555;
+  margin-right: 8px;
+  font-size: 15px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.search-bar .category i.fa-angle-down {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #555;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Phần nhập từ khóa */
+.search-bar .group-search {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search-bar .group-search i.fa-magnifying-glass {
+  color: #555;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.search-bar .group-search .enter-box {
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px 0 0;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
+.search-bar .group-search i.fa-delete-left {
+  position: absolute;
+  right: 15px;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.search-bar .group-search i.fa-delete-left:hover {
+  opacity: 1;
+}
+
+/* Phần địa điểm */
+.search-bar .location-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 180px;
+  border-left: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  padding: 0 15px;
+}
+
+/* Ẩn select gốc của trình duyệt cho location */
+.search-bar .location-box select {
+  display: none;
+}
+
+.search-bar .location-box i.fa-location-dot {
+  color: #555;
+  margin-right: 8px;
+  font-size: 15px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.search-bar .location-box i.fa-angle-down {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #555;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Nút tìm kiếm */
+.search-bar .search-btn {
+  min-width: 120px;
+}
+
+.search-bar .search-btn button {
+  width: 100%;
+  height: 100%;
+  background: var(--font-color);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 0.8;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.search-bar .search-btn button:hover {
+  background: var(--hover-color);
+}
+
+.search-bar select {
+  display: none !important; /* Ẩn select gốc */
+}
+
+/* Custom dropdown options styling */
+.search-bar .custom-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+  max-height: 0;
+  overflow-y: hidden; /* chỉ ẩn dọc */
+  overflow-x: hidden; /* ẩn ngang */
+
+  visibility: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.search-bar .custom-dropdown.show {
+  max-height: 280px;
+  opacity: 1;
+  visibility: visible;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  margin-top: 5px;
+  z-index: 1001;
+  pointer-events: auto;
+  animation: dropdownFadeIn 0.3s ease;
+}
+
+/* Thêm styling cho thanh cuộn */
+.search-bar .custom-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-bar .custom-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.search-bar .custom-dropdown::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.search-bar .custom-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.search-bar .custom-dropdown .dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid #f5f5f5;
+  position: relative;
+}
+
+.search-bar .custom-dropdown .dropdown-item:hover {
+  background-color: #f0f7f0;
+  color: var(--font-color);
+}
+
+.search-bar .custom-dropdown .dropdown-item.active {
+  background-color: #e6f3e6;
+  color: var(--font-color);
+  position: relative;
+  font-weight: 500;
+}
+
+/* Add check icon to selected item */
+.search-bar .custom-dropdown .dropdown-item.active::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--font-color);
+}
+
+/* Add arrow icon on hover */
+.search-bar .custom-dropdown .dropdown-item:not(.active):hover::after {
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--font-color);
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+/* Overlay for closing dropdown when clicking outside */
+.search-bar .dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  /* z-index: 999; */
+  display: none;
+}
+
+.search-bar .dropdown-overlay.active {
+  display: block;
+}
+
+/* Custom select value display */
+.search-bar .custom-select-value {
+  position: absolute;
+  left: 35px;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Animation for dropdown opening */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hiệu ứng flash khi item được chọn */
+.search-bar .custom-select-value.selected {
+  animation: flash-selection 0.6s ease;
+}
+
+@keyframes flash-selection {
+  0% {
+    background-color: rgba(0, 178, 79, 0.05);
+  }
+  50% {
+    background-color: rgba(0, 178, 79, 0.1);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+/* Ripple effect for dropdown items */
+.search-bar .custom-dropdown .dropdown-item .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(0, 178, 79, 0.1);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .search-bar .box-search {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .search-bar .category,
+  .search-bar .group-search,
+  .search-bar .location-box {
+    min-width: 33.33%;
+    border-bottom: 1px solid #e0e0e0;
+    height: 50px;
+  }
+
+  .search-bar .search-btn {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .search-bar .search-btn button {
+    border-radius: 0 0 4px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar .box-search {
+    flex-direction: column;
+  }
+
+  .search-bar .category,
+  .search-bar .group-search,
+  .search-bar .location-box {
+    width: 100%;
+    min-width: 100%;
+    border-right: none;
+    border-left: none;
+  }
+
+  .search-bar .search-btn button {
+    margin-left: 10px;
+    border-radius: 20px;
+  }
+}
+
+/* END OF SEARCH BAR */
+
+/* END OF SEARCH BAR   */
+
+/* UPDATE NUMBER  */
+
+/* UPDATE NUMBER SECTION */
+.update-number {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.update-number .container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Tiêu đề chính */
+.search-job-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Breadcrumb navigation */
+.bread-crumb {
+  margin-bottom: 5px;
+}
+
+.bread-crumb .nav {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.bread-crumb .nav li {
+  font-size: 14px;
+  color: #666;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.bread-crumb .nav li:last-child {
+  color: #333;
+  font-weight: 500;
+}
+
+.bread-crumb .nav li i {
+  font-size: 12px;
+  margin: 0 5px;
+  color: #999;
+}
+
+/* Nút tạo thông báo việc làm */
+.btn-noti {
+  margin-left: auto;
+}
+
+.btn-creatjob {
+  background-color: transparent;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-creatjob:hover {
+  background-color: rgba(0, 178, 79, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .update-number .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-job-header {
+    font-size: 18px;
+  }
+
+  .btn-noti {
+    margin-left: 0;
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+}
+
+/* Nút tạo thông báo việc làm */
+.btn-noti {
+  margin-left: auto;
+}
+
+.btn-creatjob {
+  background-color: transparent;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Khoảng cách giữa icon và text */
+}
+
+.btn-creatjob i {
+  font-size: 14px;
+}
+
+.btn-creatjob:hover {
+  background-color: rgba(0, 178, 79, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-noti {
+    margin-left: 0;
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+}
+
+/* END OF UPDATE NUMBER   */
+
+/* KEYWORDS CONTENT */
+.keyword-content {
+  padding: 15px 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.keyword-content .container {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none; /* Ẩn scrollbar trên Firefox */
+  -ms-overflow-style: none; /* Ẩn scrollbar trên IE/Edge */
+  white-space: nowrap;
+  padding-bottom: 5px; /* Tránh cut-off scrollbar */
+}
+
+/* Ẩn scrollbar trên Chrome/Safari */
+.keyword-content .container::-webkit-scrollbar {
+  display: none;
+}
+
+.keyword-content .description {
+  color: #333;
+  font-weight: 500;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+
+.keyword-content .wrapper-content {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.keyword-content .wrapper-content li {
+  padding: 6px 15px;
+  margin-right: 10px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  color: #333;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.keyword-content .wrapper-content li:hover {
+  border-color: var(--font-color);
+  background-color: rgba(0, 178, 79, 0.05);
+  color: var(--font-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .keyword-content .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* END OF KEYWORDS CONTENT  */
+
+/* SECTION 1  */
+
+/* SECTION 1 - FILTER SIDEBAR */
+
+.section-1 {
+  padding: 20px 0 40px;
+  background-color: #f5f5f5;
+}
+
+.section-1 .container {
+  display: flex;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Left side - Filter section */
+.section-1 .left-side {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Header filter section */
+.section-1 .header-filter {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.section-1 .header-filter i {
+  color: var(--font-color);
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.section-1 .header-filter .title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.section-1 .header-filter .delete-filter {
+  background-color: #f0f0f0;
+  border: none;
+  color: #666;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.section-1 .header-filter .delete-filter:hover {
+  background-color: #e0e0e0;
+}
+
+/* Category filter section */
+.section-1 .category-filter {
+  padding: 15px;
+}
+
+.section-1 .category-filter-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.section-1 .list-catgegory-job {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for each list item with checkbox */
+.section-1 .list-catgegory-job li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-1 .list-catgegory-job li:last-child {
+  margin-bottom: 0;
+}
+
+/* Creating custom checkbox */
+.section-1 .list-catgegory-job li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+/* Hover effect for checkbox */
+.section-1 .list-catgegory-job li:hover::before {
+  border-color: var(--font-color);
+}
+
+/* For selected/checked items */
+.section-1 .list-catgegory-job li.selected::before {
+  background-color: var(--font-color);
+  border-color: var(--font-color);
+}
+
+.section-1 .list-catgegory-job li.selected::after {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 3px;
+  top: 0;
+  color: white;
+  font-size: 12px;
+}
+
+/* Add count in parentheses */
+.section-1 .list-catgegory-job li::after {
+  content: attr(data-count);
+  color: #999;
+  font-size: 13px;
+}
+
+/* View more button */
+.section-1 .view-more {
+  color: #00b14f;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.section-1 .view-more:hover {
+  color: #009a44;
+}
+
+/* Right content area */
+.section-1 .right-side {
+  padding-left: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .section-1 .container {
+    flex-direction: column;
+  }
+
+  .section-1 .right-side {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+}
+
+/* ADVANCED FILTER  */
+
+/* FILTER OPTIONS - ADVANCED BOXES */
+
+/* Container cho từng hộp filter */
+.section-1 .filter-option-list-box {
+  padding: 0;
+}
+
+.section-1 .advanced-box {
+  padding: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.section-1 .advanced-box ul li {
+  display: flex;
+}
+
+/* Tiêu đề của mỗi hộp filter */
+.section-1 .option-header {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* Style chung cho tất cả các danh sách filter */
+.section-1 .sale-method,
+.section-1 .target-customer,
+.section-1 .filter-exp,
+.section-1 .filter-postion,
+.section-1 .filter-salary,
+.section-1 .filter-type,
+.section-1 .filter-company-type {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Style cho mỗi item trong danh sách filter */
+.section-1 .sale-method li,
+.section-1 .target-customer li,
+.section-1 .filter-exp li,
+.section-1 .filter-postion li,
+.section-1 .filter-salary li,
+.section-1 .filter-type li,
+.section-1 .filter-company-type li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  width: calc(50% - 5px); /* 50% width minus half of the gap */
+  box-sizing: border-box;
+}
+
+/* Item đầu tiên (Tất cả) và các item có text dài chiếm toàn bộ chiều rộng */
+.section-1 .sale-method li:first-child,
+.section-1 .target-customer li:first-child,
+.section-1 .filter-exp li:first-child,
+.section-1 .filter-postion li:first-child,
+.section-1 .filter-salary li:first-child,
+.section-1 .filter-type li:first-child,
+.section-1 .filter-company-type li:first-child,
+.section-1 .sale-method li.full-width,
+.section-1 .target-customer li.full-width,
+.section-1 .filter-exp li.full-width,
+.section-1 .filter-postion li.full-width,
+.section-1 .filter-salary li.full-width,
+.section-1 .filter-type li.full-width,
+.section-1 .filter-company-type li.full-width {
+  width: 100%;
+}
+
+/* Tự động xác định những item có text dài */
+.section-1 .sale-method li:nth-child(4), /* Bán hàng tại của hàng/showroom */
+.section-1 .filter-postion li:nth-child(4), /* Trường/Phó phòng */
+.section-1 .filter-postion li:nth-child(5), /* Quản lý/Giám sát */
+.section-1 .filter-postion li:nth-child(6), /* Trưởng chi nhánh */
+.section-1 .filter-salary li:nth-child(9) /* Thoả thuận */ {
+  width: 100%;
+}
+
+.section-1 .sale-method li.selected::after,
+.section-1 .target-customer li.selected::after,
+.section-1 .filter-exp li.selected::after,
+.section-1 .filter-postion li.selected::after,
+.section-1 .filter-salary li.selected::after,
+.section-1 .filter-type li.selected::after,
+.section-1 .filter-company-type li.selected::after {
+  top: 50%;
+}
+
+/* Responsive: khi màn hình nhỏ, mỗi item chiếm toàn bộ chiều rộng */
+@media (max-width: 576px) {
+  .section-1 .sale-method li,
+  .section-1 .target-customer li,
+  .section-1 .filter-exp li,
+  .section-1 .filter-postion li,
+  .section-1 .filter-salary li,
+  .section-1 .filter-type li,
+  .section-1 .filter-company-type li {
+    width: 100%;
+  }
+}
+
+/* Giữ nguyên radio button và các hiệu ứng */
+.section-1 .sale-method li::before,
+.section-1 .target-customer li::before,
+.section-1 .filter-exp li::before,
+.section-1 .filter-postion li::before,
+.section-1 .filter-salary li::before,
+.section-1 .filter-type li::before,
+.section-1 .filter-company-type li::before {
+  top: 50%;
+}
+
+/* Tạo radio button */
+.section-1 .sale-method li::before,
+.section-1 .target-customer li::before,
+.section-1 .filter-exp li::before,
+.section-1 .filter-postion li::before,
+.section-1 .filter-salary li::before,
+.section-1 .filter-type li::before,
+.section-1 .filter-company-type li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+/* Hiệu ứng hover cho radio button */
+.section-1 .sale-method li:hover::before,
+.section-1 .target-customer li:hover::before,
+.section-1 .filter-exp li:hover::before,
+.section-1 .filter-postion li:hover::before,
+.section-1 .filter-salary li:hover::before,
+.section-1 .filter-type li:hover::before,
+.section-1 .filter-company-type li:hover::before {
+  border-color: var(--font-color);
+}
+
+/* Trạng thái được chọn cho radio button */
+.section-1 .sale-method li.selected::after,
+.section-1 .target-customer li.selected::after,
+.section-1 .filter-exp li.selected::after,
+.section-1 .filter-postion li.selected::after,
+.section-1 .filter-salary li.selected::after,
+.section-1 .filter-type li.selected::after,
+.section-1 .filter-company-type li.selected::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--font-color);
+}
+
+/* Mặc định chọn option đầu tiên (Tất cả) */
+.section-1 .sale-method li:first-child,
+.section-1 .target-customer li:first-child,
+.section-1 .filter-exp li:first-child,
+.section-1 .filter-postion li:first-child,
+.section-1 .filter-salary li:first-child,
+.section-1 .filter-type li:first-child,
+.section-1 .filter-company-type li:first-child {
+  font-weight: 500;
+}
+
+.section-1 .sale-method li:first-child::before,
+.section-1 .target-customer li:first-child::before,
+.section-1 .filter-exp li:first-child::before,
+.section-1 .filter-postion li:first-child::before,
+.section-1 .filter-salary li:first-child::before,
+.section-1 .filter-type li:first-child::before,
+.section-1 .filter-company-type li:first-child::before {
+  border-color: var(--font-color);
+}
+
+.section-1 .sale-method li:first-child::after,
+.section-1 .target-customer li:first-child::after,
+.section-1 .filter-exp li:first-child::after,
+.section-1 .filter-postion li:first-child::after,
+.section-1 .filter-salary li:first-child::after,
+.section-1 .filter-type li:first-child::after,
+.section-1 .filter-company-type li:first-child::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--font-color);
+}
+
+/* Custom styling cho dropdown select */
+.section-1 .advanced-box select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8.825L1.175 4 2.238 2.938 6 6.7 9.763 2.937 10.825 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.section-1 .advanced-box select:hover {
+  border-color: var(--font-color);
+}
+
+.section-1 .advanced-box select:focus {
+  border-color: var(--font-color);
+  box-shadow: 0 0 0 2px rgba(0, 177, 79, 0.1);
+}
+
+/* Custom styling cho phần nhập mức lương */
+.section-1 .custom-salary {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.section-1 .custom-salary input {
+  width: 80px;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.section-1 .custom-salary input:focus {
+  border-color: var(--font-color);
+  box-shadow: 0 0 0 2px rgba(0, 177, 79, 0.1);
+}
+
+.section-1 .custom-salary span {
+  margin: 0 5px;
+  color: #666;
+  font-size: 13px;
+}
+
+.section-1 .custom-salary .apply-salary {
+  margin-left: auto;
+  padding: 8px 15px;
+  background-color: var(--font-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.section-1 .custom-salary .apply-salary:hover {
+  background-color: var(--hover-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-1 .custom-salary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-1 .custom-salary .apply-salary {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/* END OF ADVANCED FILTER  */
+
+/* list job research  */
+
+/* CSS cho job box trong trang tìm việc */
+
+.section-1 {
+  background: var(--main-color);
+}
+
+.list-search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.section-1 .job-box {
+  /* background-color: #f4f3f7; */
+  /* background-color: #F5EFFF; */
+  background-color: #fff;
+  /* #ebeaee; */
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  /* border: 2px solid var(--font-color); */
+  transition: all 0.3s ease; /* Thêm transition mượt mà */
+  transform: translateY(0); /* Vị trí ban đầu */
+}
+
+/* Hiệu ứng phóng to khi hover vào job box */
+.section-1 .job-box:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Tăng shadow để nổi bật hơn */
+  border: 2px solid var(--font-color);
+  transform: translateY(-3px) scale(1.02); /* Di chuyển lên và phóng to */
+  z-index: 10; /* Đảm bảo box nổi lên trên các phần tử khác */
+}
+
+.section-1 .job-box .job-img {
+  width: 106px;
+  height: 106px;
+  margin-right: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-1 .job-box .job-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.section-1 .job-box .title-job {
+  flex: 1;
+  min-width: 0;
+  padding-right: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 22px;
+  letter-spacing: -0.15px;
+}
+
+.section-1 .job-box .title-job:hover {
+  color: var(--font-color);
+  /* text-decoration: none; */
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.section-1 .job-box .company-name {
+  color: #7f878f;
+  font-size: 13px;
+  margin: 5px 0;
+  font-weight: 600;
+  display: -webkit-box;
+  letter-spacing: 0.13px;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.section-1 .job-box .salary {
+  color: #00b14f;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 8px 0;
+  align-items: center;
+  gap: 6px;
+  justify-content: right;
+  line-height: 20px;
+}
+
+.section-1 .job-box .job-info {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 120px;
+  gap: 20px;
+  border-radius: 100px;
+  align-items: center;
+}
+
+.section-1 .job-box .job-info span {
+  /* background: #f0f0f0; */
+  background: #e3e2e2;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.section-1 .job-box .location-info,
+.exp-info {
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 18px;
+  padding: 4px 13px 4px 28px; /* Tăng padding bên trái để tạo không gian cho icon */
+  border-radius: 100px;
+}
+
+.section-1 .job-box .location-info:before {
+  content: "\f3c5";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px; /* Điều chỉnh vị trí icon từ trái vào */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 12px;
+}
+
+.section-1 .job-box .exp-info:before {
+  content: "\f073";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px; /* Điều chỉnh vị trí icon từ trái vào */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 12px; /* Đồng nhất font size với location-info */
+}
+
+.section-1 .job-box .box-icon {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  padding-left: 110px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.section-1 .job-box .item-tag {
+  background-color: transparent;
+  color: #7f878f;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: auto;
+}
+
+.section-1 .job-box .apply-btn {
+  background-color: var(--font-color);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 5px 15px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.section-1 .apply-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.section-1 .job-box .interest-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.section-1 .job-box .interest-btn:hover {
+  border-color: var(--font-color);
+  color: var(--font-color);
+}
+
+/* Responsive cho job box trên màn hình nhỏ */
+@media (max-width: 768px) {
+  .job-info,
+  .box-icon {
+    padding-left: 0;
+  }
+
+  .section-1 .job-box .job-img {
+    width: 106px;
+    height: 106px;
+    background-color: #fff;
+  }
+
+  .title-job {
+    font-size: 15px;
+  }
+
+  .apply-btn {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Style cho tag "TOP" */
+.section-1 .job-box .top-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--font-color);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Style cho đánh dấu việc làm xác thực */
+.job-box .verified-tag {
+  color: #00b14f;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* uptrend wrapper  */
+
+/* Style cho update-cv section và wrapper-botton */
+.section-1 .left-side .update-cv {
+  background-color: #e6f7ec;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+.section-1 .left-side .update-cv .title {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.section-1 .left-side .update-cv .title span {
+  color: var(--font-color);
+  font-weight: 700;
+}
+
+.section-1 .left-side .update-cv .desc {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.section-1 .left-side .update-cv .wrapper-botton {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.section-1 .left-side .update-cv .wrapper-botton .createCV {
+  background-color: var(--font-color);
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.section-1 .left-side .update-cv .wrapper-botton .createCV:hover {
+  background-color: var(--hover-color);
+}
+
+.section-1 .left-side .update-cv .wrapper-botton .fa-arrow-trend-up {
+  color: var(--font-color);
+  font-size: 16px;
+  margin-left: 15px;
+  margin-right: 5px;
+  height: 43.075px;
+  font-size: 26px;
+  /* margin-left: 18px; */
+}
+
+.section-1 .left-side .update-cv .wrapper-botton .uptrend-number {
+  color: var(--font-color);
+  font-weight: 700;
+  font-size: 24px;
+  margin-right: 10px;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 9px;
+}
+
+.section-1 .left-side .update-cv .wrapper-botton .uptrend {
+  height: 40px;
+  max-width: 120px;
+  object-fit: contain;
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-1 .left-side .update-cv .wrapper-botton {
+    flex-wrap: wrap;
+  }
+
+  .section-1 .left-side .update-cv .wrapper-botton .uptrend {
+    position: relative;
+    margin-top: 10px;
+    margin-left: auto;
+    right: unset;
+    bottom: unset;
+  }
+}
+
+/* CSS cho phần Survey */
+.section-1 .survey {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.section-1 .survey .survey-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-1 .survey .survey-question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.section-1 .survey .required {
+  color: red;
+  margin-left: 3px;
+}
+
+.section-1 .survey .reaction-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.section-1 .survey .reaction-option {
+  text-align: center;
+  width: calc(20% - 10px);
+}
+
+.section-1 .survey .reaction-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-1 .survey .reaction-input {
+  display: none;
+}
+
+.section-1 .survey .reaction-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.section-1 .survey .reaction-icon i {
+  font-size: 30px;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+/* Icon colors */
+.section-1 .survey .reaction-option:nth-child(1) .reaction-icon i {
+  color: #ff6b6b;
+}
+
+.section-1 .survey .reaction-option:nth-child(2) .reaction-icon i {
+  color: #ffa76b;
+}
+
+.section-1 .survey .reaction-option:nth-child(3) .reaction-icon i {
+  color: #ffd76b;
+}
+
+.section-1 .survey .reaction-option:nth-child(4) .reaction-icon i {
+  color: #6bff6b;
+}
+
+.section-1 .survey .reaction-option:nth-child(5) .reaction-icon i {
+  color: #ff6bb5;
+}
+
+/* Selected state */
+.section-1 .survey .reaction-input:checked + .reaction-icon {
+  background-color: #e6f7ec;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 177, 79, 0.3);
+}
+
+.section-1 .survey .reaction-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.section-1 .survey .feedback-container {
+  margin-bottom: 25px;
+}
+
+.section-1 .survey .feedback-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-1 .survey .feedback-text {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.section-1 .survey .feedback-text:focus {
+  outline: none;
+  border-color: var(--font-color);
+  box-shadow: 0 0 0 2px rgba(0, 177, 79, 0.1);
+}
+
+.section-1 .survey .submit-container {
+  text-align: center;
+}
+
+.section-1 .survey .submit-button {
+  background-color: var(--font-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.section-1 .survey .submit-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .section-1 .survey .reaction-options {
+    gap: 15px;
+  }
+
+  .section-1 .survey .reaction-option {
+    width: calc(33.33% - 10px);
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-1 .survey .reaction-option {
+    width: calc(50% - 10px);
+  }
+}
+/* end uptrend wrapper  */
+
+/* Add this to the end of your file */
+
+/* Enhanced Animation Effects for Section-1 */
+.section-1 .job-box.animated-in {
+  transform: translateY(0) scale(1);
+}
+
+.section-1 .left-side {
+  transition: transform 0.8s ease-out, opacity 0.8s ease;
+}
+
+.section-1 .job-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-out;
+}
+
+.section-1 .job-box.animated-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation for filter lists */
+.section-1 .list-catgegory-job li,
+.section-1 .sale-method li,
+.section-1 .target-customer li,
+.section-1 .filter-exp li,
+.section-1 .filter-postion li,
+.section-1 .filter-salary li,
+.section-1 .filter-type li,
+.section-1 .filter-company-type li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fade-in-right 0.5s forwards;
+}
+
+/* Staggered animation delays */
+.section-1 [class*="filter"] li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.section-1 [class*="filter"] li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.section-1 [class*="filter"] li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.section-1 [class*="filter"] li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.section-1 [class*="filter"] li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.section-1 [class*="filter"] li:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* end list job research  */
+
+/* END OF SECTION 1  */
+
+/* Footer tổng thể */
+.ft {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* Logo */
+.ft-logo {
+  max-width: 140px;
+  height: auto;
+}
+
+/* Tiêu đề */
+.ft-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.ft-title::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #0dcaf0;
+  margin-top: 6px;
+}
+
+/* Link */
+.ft a {
+  color: #ccc;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ft a:hover {
+  color: #0dcaf0;
+  transform: translateX(5px);
+}
+
+/* Icon mạng xã hội */
+.ft-social a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ft-social a:hover {
+  color: #0dcaf0;
+  transform: scale(1.2);
+}
+
+/* Copyright */
+.ft-copy {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+/* End of footer  */

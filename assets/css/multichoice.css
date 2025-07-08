@@ -1,0 +1,2205 @@
+/* Header  */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Đảm bảo header hiển thị phía trên các phần tử khác */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ cho header */
+}
+.header .inner-header {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  height: 72px;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  justify-content: space-between;
+}
+
+.header .inner-header .inner-logo {
+  width: 130px;
+}
+
+.header .inner-header .inner-logo img {
+  width: 100%;
+  height: auto; /* Giữ tỷ lệ khung hình */
+}
+
+.header .inner-header .inner-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.header .inner-header .inner-box {
+  padding: 15px;
+  margin: 0;
+  margin-right: 15px; /* Khoảng cách giữa chữ và icon */
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.header .inner-header .inner-box p {
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.header .inner-header .inner-box i {
+  font-size: 14px; /* chọn kích thước phù hợp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.header .inner-header .inner-box:hover .inner-tag-menu {
+  color: var(
+    --font-color
+  ); /* Màu xanh khi hover, giống với màu của nút tìm kiếm */
+}
+
+.header .inner-header .inner-box:hover i {
+  color: var(--font-color); /* Có thể thêm màu xanh cho cả icon khi hover */
+}
+
+/* Styling nút đăng ký và đăng nhập */
+.header .inner-header .inner-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa 2 nút */
+  margin-left: auto; /* Đẩy các nút sang phải */
+  padding-right: 15px;
+}
+
+/* Nút đăng ký - viền xanh */
+.header .inner-header .inner-btn .sigin-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: white;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header .inner-header .inner-btn .sigin-btn:hover {
+  background-color: #f0fff0;
+}
+
+/* Nút đăng nhập - nền xanh */
+.header .inner-header .inner-btn .sigup-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--font-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 177, 79, 0.2);
+}
+
+.inner-header .inner-btn .sigup-btn:hover {
+  background-color: var(--hover-color);
+  /* box-shadow: 0 2px 10px rgba(0, 177, 79, 0.4); */
+}
+
+/* Thêm hiệu ứng xoay cho icon dropdown trong header */
+.header .inner-header .inner-box i {
+  transition: transform 0.3s ease;
+}
+
+.header .inner-header .inner-box:hover .i-header {
+  transform: rotate(180deg); /* Xoay mũi tên 180 độ khi hover */
+}
+
+/* Dropdown Menu */
+.inner-box {
+  position: relative;
+}
+
+.inner-box .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1000; /* Đặt z-index cao hơn banner */
+}
+
+.inner-box:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-section {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.dropdown-section p {
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.dropdown-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section ul li {
+  margin: 14px;
+}
+
+.dropdown-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.dropdown-section ul li a:hover {
+  color: var(--font-color);
+  transform: translateX(5px);
+}
+
+.dropdown-section ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+  width: 20px;
+  color: #555;
+}
+
+.dropdown-section ul li a:hover i {
+  color: #00b14f;
+}
+
+.header .inner-text-dropdown {
+  font-size: 14px;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-right: 1px solid #ddd;
+  gap: 6px;
+  justify-content: space-between;
+}
+/* submenu-right  */
+
+/* submenu-right-2col  */
+/* Dropdown Menu Styling */
+.inner-box {
+  position: relative;
+}
+
+.inner-box .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 600px; /* Giữ chiều rộng tối thiểu */
+  width: max-content; /* Cho phép chiều rộng mở rộng theo nội dung */
+  max-width: 800px; /* Giới hạn chiều rộng tối đa nếu cần */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1000;
+}
+
+.inner-box:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-section {
+  flex: 1;
+  padding: 28 15px;
+}
+
+.dropdown-section:first-child {
+  padding-left: 0;
+}
+
+.dropdown-section:last-child {
+  padding-right: 0;
+}
+
+.dropdown-section p {
+  /* Tiêu đề của mỗi section trong dropdown */
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  white-space: nowrap; /* Không cho phép xuống dòng */
+  overflow: hidden; /* Ẩn phần vượt quá */
+  text-overflow: ellipsis; /* Hiển thị dấu ... nếu cần */
+  padding-bottom: 0; /* Loại bỏ padding dưới */
+}
+
+.dropdown-section ul li {
+  margin-bottom: 10px; /* Khoảng cách đồng nhất */
+  margin: 0 0 10px 0; /* Reset margin và đặt lại margin-bottom */
+  padding: 0; /* Reset padding */
+}
+/* Thêm CSS đặc biệt cho dropdown Công cụ để các mục căn thẳng hàng */
+
+/* Styling cho các danh sách ul li thông thường trong dropdown */
+.dropdown-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-section ul li {
+  margin-bottom: 10px; /* Khoảng cách giữa các mục li */
+}
+
+.dropdown-section ul li:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-section ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px; /* Padding cho các mục link */
+  border-radius: 6px; /* Bo tròn góc cho hiệu ứng hover */
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  position: relative; /* Cho ::after nếu có */
+}
+
+.dropdown-section ul li a:hover {
+  color: var(--font-color);
+  background-color: #e9f5e9; /* Nền xanh nhạt khi hover */
+  transform: translateX(5px);
+}
+
+.dropdown-section ul li a i {
+  /* Icon bên trái của các mục li */
+  margin-right: 10px;
+  font-size: 14px;
+  width: 18px; /* Đảm bảo icon có độ rộng nhất định */
+  text-align: center;
+  color: #555; /* Màu icon mặc định */
+  transition: color 0.2s ease;
+}
+
+.dropdown-section ul li a:hover i {
+  color: var(--font-color); /* Màu icon khi hover */
+}
+
+/* Tiêu đề đặc biệt (ví dụ: "Tạo CV" trong dropdown "Tạo CV") */
+.dropdown-header-special {
+  color: #333 !important; /* Ghi đè màu mặc định của p */
+  font-weight: bold !important;
+  font-size: 14px !important;
+  text-transform: none !important; /* Bỏ uppercase nếu không muốn */
+}
+
+/* Tiêu đề phụ (ví dụ: "Mẫu CV theo vị trí ứng tuyển") */
+.dropdown-subheader {
+  color: #555 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  margin-top: 20px; /* Khoảng cách với phần tử phía trên */
+  text-transform: none !important;
+}
+
+/* --- Style CỤ THỂ cho các mục trong ul.dropdown-submenu-right (cột bên phải của dropdown "Tạo CV") --- */
+.dropdown-section ul.dropdown-submenu-right li a {
+  padding: 8px 10px;
+  border-radius: 7px;
+
+  height: 37px;
+}
+
+.dropdown-section ul.dropdown-submenu-right li a:hover {
+  background-color: #e9f5e9;
+  color: var(--font-color);
+}
+
+.dropdown-section ul.dropdown-submenu-right li a:hover > i:first-child {
+  color: var(--font-color);
+}
+
+.dropdown-section ul.dropdown-submenu-right li a::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Solid";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+.dropdown-section ul.dropdown-submenu-right li a:hover::after {
+  opacity: 1;
+}
+
+/* --- Styling cho phần "Công cụ" với layout Grid --- */
+.header .dropdown-section .tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Các cột tự điều chỉnh chiều rộng */
+  gap: 10px 25px; /* Khoảng cách hàng và cột (tăng khoảng cách cột) */
+  width: 100%;
+  margin-top: 0; /* Đảm bảo không có margin-top cho mục đầu tiên */
+}
+
+.header .tool-item {
+  /* Các mục trong tools-grid */
+  display: flex;
+  align-items: flex-start; /* Căn icon với dòng đầu tiên của text */
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  /* Tăng padding-right lên 30px để đảm bảo đủ không gian cho mũi tên */
+  padding: 10px 40px 10px 12px;
+  border-radius: 7px;
+  position: relative;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap; /* Ngăn văn bản xuống dòng */
+  line-height: 1.4;
+}
+
+.header .tool-item i {
+  /* Icon bên trái của tool-item */
+  margin-right: 8px;
+  font-size: 14px;
+  width: 20px;
+  color: #555;
+  text-align: center;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px; /* Điều chỉnh để icon căn tốt hơn với text */
+}
+
+.header .tool-item:hover {
+  background-color: #e9f5e9; /* Nền xanh nhạt khi hover */
+  color: var(--font-color); /* Màu chữ khi hover */
+  transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ */
+}
+
+.header .tool-item:hover i {
+  color: var(--font-color); /* Màu icon khi hover */
+}
+
+/* Mũi tên bên phải khi hover cho tool-item */
+.header .tool-item::after {
+  content: "\f061"; /* Font Awesome arrow-right icon */
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Solid";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+.tool-item:hover::after {
+  opacity: 1;
+}
+/* End of submenu-right-2col  */
+
+/* Header cũng cần z-index cao */
+.header .inner-header {
+  z-index: 1000; /* Đảm bảo header có z-index cao */
+}
+
+/* Chỉnh giá trị z-index của banner */
+.banner-wrapper {
+  margin-top: 72px; /* Bằng với chiều cao của header */
+  position: relative;
+  z-index: 10; /* Đặt z-index thấp hơn dropdown */
+}
+
+/* --- Style CỤ THỂ cho các mục trong ul.dropdown-submenu-right --- */
+
+/* Style cơ bản cho link trong dropdown-submenu-right (có thể kế thừa hoặc ghi đè) */
+.dropdown-section ul.dropdown-submenu-right li a {
+  /* Nếu muốn padding khác, có thể đặt ở đây */
+  padding: 10px 12px;
+  border-radius: 7px; /* Bo tròn góc */
+}
+
+/* Hiệu ứng hover CỤ THỂ cho các mục trong dropdown-submenu-right */
+.dropdown-section ul.dropdown-submenu-right li a:hover {
+  background-color: #e9f5e9; /* Màu nền xanh lá cây rất nhạt khi hover */
+  color: var(
+    --font-color
+  ); /* Màu chữ khi hover (font-color là màu xanh lá cây đậm) */
+  /* transform: translateX(5px); /* Đã được kế thừa từ rule chung */
+}
+
+/* Style CỤ THỂ cho icon bên trái trong dropdown-submenu-right khi hover */
+.dropdown-section ul.dropdown-submenu-right li a:hover > i:first-child {
+  color: var(--font-color); /* Màu icon khi hover */
+}
+
+/* Mũi tên hiển thị bên phải khi hover CỤ THỂ cho các mục trong dropdown-submenu-right */
+
+
+.dropdown-section ul.dropdown-submenu-right li a:hover::after {
+  opacity: 1; /* Hiện mũi tên khi hover */
+}
+
+.dropdown-section .dropdown-header-special ul li a:hover::after{
+  opacity: 1; /* Ẩn mũi tên khi hover */
+}
+
+/* CSS cho phần Bài viết nổi bật trong dropdown Cẩm nang nghề nghiệp */
+
+/* Điều chỉnh kích thước dropdown menu cho Cẩm nang nghề nghiệp */
+.inner-box:nth-child(4) .dropdown-menu {
+  min-width: 780px; /* Tăng độ rộng để hiển thị cả bài viết */
+  max-width: 900px;
+}
+
+.inner-box:nth-child(4) .dropdown-menu .dropdown-section:first-child {
+  max-width: 280px; /* Bạn có thể điều chỉnh giá trị này cho phù hợp */
+  flex-shrink: 0; /* Ngăn không cho cột này co lại quá nhiều nếu nội dung cột phải lớn */
+}
+
+/* Đảm bảo cột bên phải (BÀI VIẾT NỔI BẬT) có thể mở rộng */
+.inner-box:nth-child(4) .dropdown-menu .dropdown-section:last-child {
+  flex-grow: 1; /* Cho phép cột này chiếm không gian còn lại */
+  min-width: 0; /* Quan trọng để nội dung trong flex item có thể co lại đúng cách */
+  max-width: 420px;
+}
+
+/* Đảm bảo nội dung văn bản trong bài viết nổi bật có thể xuống dòng */
+.featured-article .article-content h3,
+.featured-article .article-content p {
+  word-break: break-word; /* Cho phép ngắt từ nếu cần để xuống dòng */
+  white-space: normal; /* Đảm bảo văn bản có thể xuống dòng tự nhiên */
+  /* Các thuộc tính -webkit-line-clamp vẫn sẽ giới hạn số dòng sau khi đã xuống dòng */
+}
+
+/* Style cho container bài viết nổi bật */
+.featured-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Style cho từng bài viết */
+.featured-article {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-article:hover {
+  background-color: #f5f5f5;
+}
+
+/* Style cho phần hình ảnh của bài viết */
+.article-image {
+  width: 120px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style cho phần nội dung của bài viết */
+.article-content {
+  flex: 1;
+}
+
+.article-content h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.article-content p {
+  font-size: 12px !important;
+  color: #666 !important;
+  margin: 0;
+  font-weight: normal !important;
+  text-transform: none !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal !important; /* Cho phép xuống dòng */
+}
+
+/* Link xem thêm */
+.view-more {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.view-more a {
+  font-size: 13px;
+  color: var(--font-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.view-more a:hover {
+  color: var(--hover-color, #00943f);
+}
+
+.view-more a i {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.view-more a:hover i {
+  transform: translateX(3px);
+}
+
+/* Thêm CSS cho mũi tên bên phải khi hover cho các mục trong dropdown "Cẩm nang nghề nghiệp" */
+
+.dropdown-section ul.dropdown-submenu-right li a::after,
+.dropdown-section .dropdown-header-special li a::after {
+  content: "\f061"; /* Mã Unicode cho icon fa-arrow-right của Font Awesome */
+  font-family: "Font Awesome 6 Free"; /* Sửa font family */
+  font-weight: 900; /* Cần thiết cho icon solid */
+  position: absolute;
+  right: 12px; /* Vị trí từ mép phải */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Ẩn mặc định */
+  transition: opacity 0.2s ease;
+  color: var(--font-color); /* Màu mũi tên */
+}
+
+/* Hiển thị mũi tên khi hover */
+.dropdown-section ul.dropdown-submenu-right li a:hover::after,
+.dropdown-section .dropdown-header-special li a:hover::after {
+  opacity: 1;
+}
+
+/* Thêm mũi tên cho section thứ hai */
+.dropdown-section ul li a::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+/* .dropdown-section ul li a:hover::after {
+  opacity: 1;
+} */
+
+.dropdown-section ul li a::after:hover
+{
+  opacity: 1;
+}
+
+/* Đảm bảo tất cả các link trong dropdown có position relative */
+.dropdown-section ul li a {
+  position: relative;
+  padding-right: 30px; /* Để có không gian cho mũi tên */
+}
+
+
+/* Đảm bảo không gian đủ cho các mục trong dropdown "Cẩm nang nghề nghiệp" */
+.inner-box:nth-child(4) .dropdown-section:first-child ul li a {
+  padding-right: 30px !important; /* Ghi đè padding right cần thiết */
+}
+
+/* Thêm mũi tên cho dropdown-header-special */
+.dropdown-section .dropdown-header-special ul li a::after {
+  content: "\f061"; /* Font Awesome arrow-right icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  color: var(--font-color);
+}
+
+/* Đảm bảo các thẻ a trong dropdown-header-special có position relative */
+.dropdown-section .dropdown-header-special ul li a {
+  position: relative;
+  padding-right: 30px; /* Tạo không gian cho mũi tên */
+}
+
+/* ...existing code... */
+
+/* 1. Đảm bảo các thẻ <a> được thiết lập để định vị tuyệt đối cho ::after */
+.dropdown-section > ul > li > a {
+  position: relative; /* Quan trọng cho việc định vị ::after */
+  padding-right: 30px; /* Tạo không gian cho icon mũi tên, điều chỉnh nếu cần */
+  /* Các style khác cho thẻ a của bạn */
+}
+
+/* 2. Định nghĩa pseudo-element ::after cho TẤT CẢ các thẻ <a> liên quan */
+/* Quy tắc này áp dụng cho các liên kết trong bất kỳ <ul> nào là con trực tiếp của .dropdown-section */
+.dropdown-section > ul > li > a::after {
+  content: "\f061"; /* Mã Unicode cho icon fa-arrow-right của Font Awesome */
+  font-family: "Font Awesome 6 Free"; /* Đảm bảo đúng tên font cho Font Awesome 6 */
+  font-weight: 900; /* Bắt buộc cho các icon solid của Font Awesome */
+  position: absolute;
+  right: 12px; /* Điều chỉnh vị trí từ mép phải nếu cần */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Ẩn theo mặc định */
+  transition: opacity 0.2s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+  color: var(--font-color); /* Màu của mũi tên, hoặc màu bạn muốn */
+  pointer-events: none; /* Để mũi tên không cản trở việc click vào link */
+}
+
+/* 3. Hiển thị pseudo-element ::after khi hover vào thẻ <a> */
+.dropdown-section > ul > li > a:hover::after {
+  opacity: 1; /* Hiện mũi tên khi hover */
+}
+
+/* ...existing code... */
+
+/* End of header  */
+
+/* SECTION 1  */
+
+/* SECTION 1 - Carousel chạy từ trái sang phải */
+.section-1 {
+  margin-top: 70px; /* Tăng margin-top để tránh che khuất bởi header cố định */
+  padding: 20px 0;
+  background-color: var(--hover-color); /* Màu xanh lá đậm như trong hình mẫu */
+  position: relative;
+
+  /* opacity: 0;
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+  
+  -webkit-transition: opacity 1s ease, transform 1s ease;
+  -moz-transition: opacity 1s ease, transform 1s ease;
+  -ms-transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease; */
+}
+
+/* .section-1.visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+} */
+
+/* Hiệu ứng cho title-container */
+.section-1 .title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s; /* Hiển thị sau section-1 một chút */
+}
+
+.section-1.visible .title-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-1 .title-container h2 {
+  font-weight: 800;
+  font-size: 42px !important;
+  line-height: 56px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.section-1 .title-container p {
+  font-size: 32px !important;
+  font-weight: 600;
+  line-height: 55px;
+}
+
+.section-1 .carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  transform: translateY(0);
+  margin-top: 100px;
+}
+
+.section-1 .slide {
+  display: flex; /* Hiển thị flex để ảnh bên trái, nội dung bên phải */
+  flex-direction: row;
+  width: 401px;
+  height: 210px;
+  margin-right: 20px;
+  background-color: var(--font-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  font-size: 14px;
+  /* align-items: center; */
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+/* Khi section visible, áp dụng animation cho các slide */
+.section-1.visible .slide {
+  animation: slideAppear 0.5s ease forwards;
+}
+
+@keyframes slideAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Áp dụng delay khác nhau cho từng slide (chỉ áp dụng cho 5-6 slide đầu tiên thôi) */
+.section-1.visible .slide:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.section-1.visible .slide:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.section-1.visible .slide:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.section-1.visible .slide:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.section-1.visible .slide:nth-child(5) {
+  animation-delay: 1s;
+}
+.section-1.visible .slide:nth-child(6) {
+  animation-delay: 1.1s;
+}
+/* Các slide còn lại sẽ xuất hiện cùng lúc để tránh delay quá lâu */
+.section-1.visible .slide:nth-child(n + 7) {
+  animation-delay: 1.2s;
+}
+
+.section-1 .slide:hover {
+  transform: translateY(-5px);
+}
+
+.section-1 .slide img {
+  width: 170px;
+  height: 210px;
+  object-fit: cover;
+  flex-shrink: 0; /* Không co ảnh lại */
+}
+
+/* Style cho phần nội dung bên phải */
+.section-1 .slide-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Đảm bảo chiều cao bằng với slide */
+}
+
+/* Style cho tiêu đề */
+.section-1 .header-content {
+  color: #006241; /* Giữ màu xanh lá cây đậm */
+  font-size: 18px; /* Tăng kích thước font */
+  font-weight: 700; /* Đậm hơn */
+  margin-top: 0;
+  margin-bottom: 8px; /* Giảm margin dưới một chút */
+}
+
+/* Style cho nội dung mô tả */
+.section-1 .content {
+  color: white; /* Giữ màu trắng */
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.section-1 .slide-track {
+  display: flex;
+  /* Sửa lại width: mỗi slide là 410px + 20px margin = 430px. 
+     Nếu bạn có 8 slide gốc và nhân đôi chúng để lặp (tổng 16 items trong track): */
+  width: calc(421px * 28);
+  /* Hoặc nếu bạn có N slide gốc và nhân đôi chúng, width là calc(430px * N * 2) 
+     Ví dụ: nếu có 5 slide gốc như trong HTML và bạn nhân đôi chúng: calc(430px * 10) */
+  animation: scroll-loop 60s linear infinite; /* Đặt tên animation mới, điều chỉnh thời gian nếu cần */
+  will-change: transform; /* Tối ưu hóa hiệu suất */
+}
+
+@keyframes scroll-animation {
+  /* Đổi tên keyframes nếu đã đổi ở trên */
+  0% {
+    transform: translateX(-100%);
+  } /* Hoặc một giá trị % khác như -50% tùy theo cách bạn cấu trúc slide lặp */
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Di chuyển một khoảng bằng chiều rộng của BỘ SLIDE GỐC.
+       Nếu có 14 slide gốc, mỗi slide chiếm 430px: 14 * 430px = 6020px */
+    transform: translateX(calc(-430px * 14));
+  }
+}
+
+/* Thêm class để kích hoạt animation ngay khi trang tải xong */
+.section-1 .slide-track.animate {
+  animation: scroll-right 40s linear infinite;
+  animation-delay: 0s; /* Không có độ trễ */
+}
+
+/* Hiệu ứng hover */
+.section-1 .slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Tạo animation chạy từ trái sang phải */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Thêm tiêu đề như trong hình mẫu */
+.section-1 .title-container {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.section-1 .title-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.section-1 .title-container p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Thêm nút tương tác */
+.section-1 .action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 237px;
+  height: 62px;
+  font-size: 24px !important;
+}
+
+.section-1 .action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .action-button i {
+  margin-left: 8px;
+}
+
+.section-1 .action-button {
+  font-size: 16px;
+  background-color: var(--font-color);
+  transform: translateY(0);
+}
+
+/* END OF SECTION 1  */
+
+/* SECTION 2  */
+
+.section-2 {
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--hover-color);
+}
+.section-2 .header-section-2 h3 {
+  font-size: 40px;
+  background-color: var(--hover-color);
+  font-weight: 700;
+  line-height: 36px;
+  max-width: 100%;
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+
+  /* Thêm thuộc tính cho hiệu ứng fade-in */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Class kích hoạt hiệu ứng cho tiêu đề */
+.section-2.visible .header-section-2 h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-2 .banner-section-2 {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.3s; /* Hiển thị sau tiêu đề */
+}
+
+.section-2 .banner-section-2 img {
+  height: 800px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.section-2.visible .banner-section-2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Thêm vendor prefix cho các trình duyệt khác */
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* END OF SECTION 2  */
+
+/* SECTION 3   */
+
+/* filepath: e:\code\BWD_2025\BWD_2025\assets\css\multichoice.css */
+/* SECTION 3 - Trắc nghiệm tính cách MBTI là gì? */
+.section-3 {
+  padding: 80px 0;
+  background-color: #f5efff;
+}
+
+.section-3 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-3 .section-title {
+  font-size: 42px;
+  color: #a594f9; /* Màu xanh lá đậm */
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  line-height: 56px;
+  letter-spacing: -1px;
+  text-align: left;
+
+  /* Hiệu ứng fade-in từ dưới lên */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-3.visible .section-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-3 .section-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+}
+
+.section-3 .mbti-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 550px;
+
+  /* Hiệu ứng fade-in từ trái sang */
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.3s;
+}
+
+.section-3.visible .mbti-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-3 .mbti-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.section-3 .mbti-description {
+  flex: 1;
+  min-width: 300px;
+
+  /* Hiệu ứng fade-in từ phải sang */
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.5s;
+}
+
+.section-3.visible .mbti-description {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-3 .description-primary {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-3 .description-secondary {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.section-3 .description-tertiary {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.section-3 .text-highlight {
+  font-style: italic;
+  color: black;
+}
+
+/* Responsive cho section-3 */
+@media (max-width: 992px) {
+  .section-3 .section-content {
+    flex-direction: column;
+  }
+
+  .section-3 .mbti-image,
+  .section-3 .mbti-description {
+    max-width: 100%;
+  }
+
+  .section-3 .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-3 {
+    padding: 50px 0;
+  }
+
+  .section-3 .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .section-3 .description-primary {
+    font-size: 18px;
+  }
+
+  .section-3 .description-secondary {
+    font-size: 16px;
+  }
+
+  .section-3 .description-tertiary {
+    font-size: 14px;
+  }
+}
+
+/* END OF SECTION 3  */
+
+/* SECTION 4  */
+
+/* SECTION 4 - Phân loại 16 nhóm tính cách MBTI */
+.section-4 {
+  padding: 80px 0;
+  background-color: #f5efff;
+  position: relative;
+}
+
+.section-4 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Tiêu đề và mô tả */
+.section-4 .classify-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-4 .inner-header-title {
+  font-size: 42px;
+  color: var(--font-color); /* Màu xanh lá đậm tương tự phần khác */
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  line-height: 1.2;
+
+  /* Hiệu ứng fade-in từ dưới lên */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-4.visible .inner-header-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-4 .inner-header-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 930px;
+  margin: 0 auto;
+  letter-spacing: -0.16px;
+
+  /* Hiệu ứng fade-in từ dưới lên với độ trễ nhỏ */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.section-4.visible .inner-header-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid layout cho 4 nhóm tính cách */
+.section-4 .inner-main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* Style cho từng item */
+.section-4 .item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  /* Hiệu ứng fade-in và scale */
+  opacity: 0;
+  transform: translateY(40px) scale(0.25);
+  transition: all 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+
+/* Delay cho từng item để hiện dần dần */
+.section-4.visible .item:nth-child(1) {
+  transition-delay: 0.3s;
+}
+
+.section-4.visible .item:nth-child(2) {
+  transition-delay: 0.5s;
+}
+
+.section-4.visible .item:nth-child(3) {
+  transition-delay: 0.7s;
+}
+
+.section-4.visible .item:nth-child(4) {
+  transition-delay: 0.9s;
+}
+
+.section-4.visible .item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hover effect cho item */
+.section-4 .item:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-7px);
+}
+
+/* Phần hình ảnh */
+.section-4 .item-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.section-4 .item-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.section-4 .item:hover .item-img img {
+  transform: scale(1.05);
+}
+
+/* Phần nội dung */
+.section-4 .item-content {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.section-4 .content-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--font-color);
+  flex-shrink: 0;
+  line-height: 1;
+  width: 45px;
+  text-align: center;
+}
+
+.section-4 .content-text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .section-4 .inner-main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .section-4 .inner-header-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-4 {
+    padding: 50px 0;
+  }
+
+  .section-4 .inner-header-title {
+    font-size: 28px;
+  }
+
+  .section-4 .inner-header-desc {
+    font-size: 15px;
+  }
+
+  .section-4 .content-number {
+    font-size: 36px;
+    width: 40px;
+  }
+
+  .section-4 .content-text {
+    font-size: 16px;
+  }
+
+  .section-4 .item-content {
+    padding: 20px;
+    gap: 15px;
+  }
+}
+
+/* END OF SECTION 4  */
+
+/* FIX SECTION 5 – Flip Card */
+
+/* Thay đổi cấu trúc CSS cho section-5 */
+.section-5 {
+  background-color: var(--font-color);
+  padding: 80px 0;
+  position: relative;
+  color: #333;
+}
+
+.section-5 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Tiêu đề */
+.section-5 .group-header h2 {
+  font-size: 42px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-5.visible .group-header h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid 4x2 */
+.section-5 .list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 15px;
+}
+
+/* Wrapper mỗi card để tạo 3D perspective */
+.section-5 .list-item {
+  perspective: 1000px; /* Quan trọng: giá trị perspective phải đặt trên container */
+  height: 320px;
+}
+
+/* Flip-card container */
+.section-5 .item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* Giữ tính chất 3D cho các phần tử con */
+  transition: transform 0.5s ease, opacity 0.6s ease, transform 0.55s ease;
+  opacity: 0;
+  transform: translateY(40px) rotateY(0deg);
+  cursor: pointer;
+}
+
+/* Tạo hiệu ứng xuất hiện tuần tự */
+.section-5.visible .list-item:nth-child(1) .item {
+  transition-delay: 0.2s;
+}
+.section-5.visible .list-item:nth-child(2) .item {
+  transition-delay: 0.3s;
+}
+.section-5.visible .list-item:nth-child(3) .item {
+  transition-delay: 0.4s;
+}
+.section-5.visible .list-item:nth-child(4) .item {
+  transition-delay: 0.5s;
+}
+.section-5.visible .list-item:nth-child(5) .item {
+  transition-delay: 0.6s;
+}
+.section-5.visible .list-item:nth-child(6) .item {
+  transition-delay: 0.7s;
+}
+.section-5.visible .list-item:nth-child(7) .item {
+  transition-delay: 0.8s;
+}
+.section-5.visible .list-item:nth-child(8) .item {
+  transition-delay: 0.9s;
+}
+
+/* Khi section vào viewport */
+.section-5.visible .item {
+  opacity: 1;
+  transform: translateY(0) rotateY(0deg);
+}
+
+/* Khi hover thì flip */
+.section-5 .item:hover {
+  transform: translateY(0) rotateY(180deg);
+}
+
+/* Cả mặt trước + sau */
+.section-5 .item-front,
+.section-5 .item-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Ẩn mặt sau khi lật */
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Mặt sau quay 180° */
+.section-5 .item-back {
+  transform: rotateY(180deg);
+}
+
+/* Title + desc */
+.section-5 .inner-title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.section-5 .inner-desc {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Hình ảnh */
+.section-5 .item-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.section-5 .item-img img {
+  max-height: 180px;
+  width: auto;
+  border-radius: 15px;
+}
+
+/* Mặt sau: chi tiết */
+.section-5 .item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.section-5 .item-details h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #006241;
+}
+
+.section-5 .item-details p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--font-color);
+}
+
+.section-5 .mbti-traits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.section-5 .trait {
+  padding: 5px 12px;
+  background-color: #e9f5e9;
+  color: #006241;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.section-5 .view-more {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #006241;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-5 .view-more:hover {
+  background-color: #004d33;
+}
+
+/* === MỚI: chỉ hiển thị <p> trên back, ẩn các phần khác === */
+.section-5 .item-back .inner-title,
+.section-5 .item-back .inner-desc,
+.section-5 .item-back .item-img,
+.section-5 .item-back .mbti-traits,
+.section-5 .item-back .view-more,
+.section-5 .item-back .item-details h4 {
+  display: none !important;
+}
+
+.section-5 .item-back .item-details p {
+  display: block; /* giữ lại phần <p> */
+  margin: 0 auto;
+  /* nếu cần style thêm cho p, đặt ở đây */
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .section-5 .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .section-5 .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .section-5 .list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-5 .group-header h2 {
+    font-size: 32px;
+  }
+
+  .section-5 .inner-title {
+    font-size: 28px;
+  }
+}
+/* End of section 5  */
+
+/* SECTION 6  */
+
+/* SECTION 6 – Hướng dẫn làm trắc nghiệm MBTI */
+
+/* 1. Phần chung và hiệu ứng cơ bản */
+.section-6 {
+  background-color: #fbf9f4; /* nền trắng ngả vàng nhạt */
+  padding: 80px 0 0 0;
+  position: relative;
+}
+
+.section-6 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* 2. Tiêu đề với hiệu ứng fadeIn */
+.section-6 .header-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b3e26; /* xanh đậm */
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dcd7c9; /* đường kẻ mảnh */
+  line-height: 1.3;
+
+  /* Hiệu ứng xuất hiện */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-6.visible .header-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. Mỗi item với hiệu ứng xuất hiện từ hai bên */
+.section-6 .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #dcd7c9;
+
+  /* Hiệu ứng xuất hiện */
+  opacity: 1;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+
+/* Mục 1 xuất hiện từ trái */
+.section-6.visible .item:nth-child(1) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+/* Mục 2 xuất hiện từ phải */
+.section-6.visible .item:nth-child(2) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+
+/* Mục 3 xuất hiện từ trái */
+.section-6.visible .item:nth-child(3) {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.7s;
+}
+
+/* Hiệu ứng hover */
+/* .section-6 .item:hover {
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+} */
+
+.section-6 .item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* 3a. Đảo chiều thứ tự và hướng xuất hiện cho các item chẵn */
+.section-6 .item:nth-child(even) {
+  flex-direction: row-reverse;
+  transform: translateX(50px); /* Xuất hiện từ phải */
+}
+
+.section-6 .item:nth-child(even) .item-content {
+  text-align: right;
+}
+
+/* 4. Phần text */
+.section-6 .item-content {
+  flex: 1;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.section-6 .item-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #0b3e26;
+  margin-bottom: 16px;
+  position: relative;
+
+  /* Hiệu ứng màu khi hover */
+  transition: color 0.3s ease;
+}
+
+.section-6 .item:hover .item-title {
+  color: var(--font-color);
+}
+
+.section-6 .item-desc {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 5. Phần hình với hiệu ứng scale khi hover */
+.section-6 .item-img {
+  flex: 0 0 280px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.section-6 .item-img img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+.section-6 .item:hover .item-img img {
+  transform: scale(1.05);
+}
+
+/* 6. Nút "Làm bài test" với hiệu ứng xuất hiện và hover */
+.section-6 .btn-container {
+  text-align: center;
+  margin-top: 40px;
+
+  /* Hiệu ứng xuất hiện */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.9s;
+}
+
+.section-6.visible .btn-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-6 .btn-test {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--font-color);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 178, 79, 0.2);
+  transition: all 0.3s ease;
+}
+
+.section-6 .btn-test:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 178, 79, 0.3);
+}
+
+.section-6 .btn-test i {
+  margin-left: 8px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.section-6 .btn-test:hover i {
+  transform: translateX(5px);
+}
+
+/* 7. Responsive */
+@media (max-width: 992px) {
+  .section-6 .header-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .section-6 .item,
+  .section-6 .item:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-6 .item-content,
+  .section-6 .item:nth-child(even) .item-content {
+    padding: 0 0 20px 0;
+    text-align: center;
+  }
+
+  .section-6 .item-img {
+    margin-top: 20px;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Điều chỉnh hiệu ứng xuất hiện cho responsive */
+  .section-6 .item,
+  .section-6 .item:nth-child(even) {
+    transform: translateY(40px);
+  }
+
+  .section-6.visible .item,
+  .section-6.visible .item:nth-child(even) {
+    transform: translateY(0);
+  }
+
+  .section-6 .btn-test {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-6 {
+    padding: 50px 0;
+  }
+
+  .section-6 .header-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .section-6 .item {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  .section-6 .item-title {
+    font-size: 20px;
+  }
+
+  .section-6 .item-desc {
+    font-size: 15px;
+  }
+
+  .section-6 .btn-test {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}
+
+/* END OF SECTION 6*/
+
+/* SECTION 7  */
+
+/* SECTION 7 - FAQs */
+
+.section-7 {
+  background-color: #f5efff;
+  padding: 80px 0;
+  position: relative;
+}
+
+.section-7 .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Tiêu đề FAQs */
+.section-7 .faq-tag {
+  margin-bottom: 40px;
+}
+
+.section-7 .faq-tag h2 {
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--font-color);
+  position: relative;
+  display: inline-block;
+
+  /* Hiệu ứng fade-in */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-7.visible .faq-tag h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Danh sách câu hỏi */
+.section-7 .faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Từng câu hỏi */
+.section-7 .faq-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  /* Hiệu ứng fade-in */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Áp dụng delay hiệu ứng cho từng FAQ item */
+.section-7.visible .faq-item:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.section-7.visible .faq-item:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.section-7.visible .faq-item:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.section-7.visible .faq-item:nth-child(4) {
+  transition-delay: 0.5s;
+}
+.section-7.visible .faq-item:nth-child(5) {
+  transition-delay: 0.6s;
+}
+.section-7.visible .faq-item:nth-child(6) {
+  transition-delay: 0.7s;
+}
+.section-7.visible .faq-item:nth-child(7) {
+  transition-delay: 0.8s;
+}
+
+.section-7.visible .faq-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Phần câu hỏi */
+.section-7 .faq-question {
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-7 .faq-question:hover {
+  background-color: #f9f9f1;
+}
+
+.section-7 .faq-question h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.section-7 .faq-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.section-7 .faq-icon i {
+  font-size: 16px;
+  color: #0b3e26;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Ẩn dấu trừ mặc định */
+.section-7 .faq-icon .fa-minus {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+/* Khi item active, hiện dấu trừ, ẩn dấu cộng */
+.section-7 .faq-item.active .faq-icon .fa-minus {
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.section-7 .faq-item.active .faq-icon .fa-plus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+/* Phần câu trả lời */
+.section-7 .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.section-7 .faq-answer p {
+  margin: 0;
+  padding: 0 25px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Khi item active, hiển thị câu trả lời */
+.section-7 .faq-item.active .faq-answer {
+  max-height: 500px; /* Đủ cao để hiển thị nội dung */
+  padding-bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-7 {
+    padding: 60px 0;
+  }
+
+  .section-7 .faq-tag h2 {
+    font-size: 36px;
+  }
+
+  .section-7 .faq-question h3 {
+    font-size: 16px;
+  }
+
+  .section-7 .faq-answer p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-7 {
+    padding: 40px 0;
+  }
+
+  .section-7 .faq-tag h2 {
+    font-size: 28px;
+  }
+
+  .section-7 .faq-question {
+    padding: 15px 20px;
+  }
+
+  .section-7 .faq-answer p {
+    padding: 0 20px;
+    font-size: 14px;
+  }
+}
+
+/* END OF SECTION 7 */
+
+/* Footer tổng thể */
+.ft {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* Logo */
+.ft-logo {
+  max-width: 140px;
+  height: auto;
+}
+
+/* Tiêu đề */
+.ft-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.ft-title::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #0dcaf0;
+  margin-top: 6px;
+}
+
+/* Link */
+.ft a {
+  color: #ccc;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ft a:hover {
+  color: #0dcaf0;
+  transform: translateX(5px);
+}
+
+/* Icon mạng xã hội */
+.ft-social a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ft-social a:hover {
+  color: #0dcaf0;
+  transform: scale(1.2);
+}
+
+/* Copyright */
+.ft-copy {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+/* End of footer  */

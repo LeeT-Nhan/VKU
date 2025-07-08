@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Job Detail</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+        <link rel="stylesheet" href="../assets/css/base.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <link rel="stylesheet" href="../assets/css/job-detail.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    
+<!-- HEADER  -->
+
+ <div class="header">
+    <div class="inner-header">
+        <div class="inner-logo">
+            <a href="index.html">
+                <img src="/assets/image/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="inner-menu">
+            <div class="inner-box">
+                <p class="inner-tag-menu">Cơ hội nghề nghiệp</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p>Việc làm</p>
+                        <ul>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-search"></i>Khám phá việc làm</a></li>
+                            <li><a href="../index/jobresearch.html"><i class="fa-regular fa-bookmark"></i>Tìm kiếm việc làm nâng cao</a></li>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-briefcase"></i>Gợi ý việc làm</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section">
+                        <p>VIỆC LÀM THEO VỊ TRÍ</p>
+                        <ul>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-user-tie"></i> Việc làm Nhân viên kinh doanh</a></li>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-calculator"></i> Việc làm Kế toán</a></li>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-bullhorn"></i> Việc làm Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-box">
+                <p class="inner-tag-menu">Xây dựng CV</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p class="dropdown-header-special">Tạo CV</p> 
+                        <ul>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-palette"></i> Mẫu CV theo style </a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-file-lines"></i> Mẫu CV Đơn giản</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-star"></i> Mẫu CV Ấn tượng</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-user-tie"></i> Mẫu CV Chuyên nghiệp</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-desktop"></i> Mẫu CV Hiện đại</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" style="margin-top: 28px;">
+                        <!-- <p>CÔNG CỤ CV</p>  -->
+                        <ul class="dropdown-submenu-right">
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-folder-open"></i> Quản lý CV</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-upload"></i> Tải CV lên</a></li>
+                            <li><a href="../index/introduceCr.html"><i class="fa-solid fa-book-open"></i> Hướng dẫn viết CV</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-envelope-open-text"></i> Quản lý Cover Letter</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-file-signature"></i> Mẫu Cover Letter</a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            <div class="inner-box">
+                <p class="inner-tag-menu">Công cụ hỗ trợ</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p>KHÁM PHÁ BẢN THÂN</p>
+                        <ul>
+                            <li><a href="../index/mulitichoice.html"><i class="fa-solid fa-brain"></i>Nâng cao kỹ năng</a></li>
+                            <li><a href="../index/Achievement.html"><i class="fa-solid fa-user-graduate"></i>Trắc nghiệm Trí thông minh</a></li>
+                            <li><a href="../index/checkskills.html"><i class="fa-solid fa-chart-line"></i>Kỹ năng SuperStars</a></li>
+                            <li><a href="../index/mulitichoice.html"><i class="fa-solid fa-graduation-cap"></i>Khóa học trực tuyến</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section">
+                        <p>CÔNG CỤ TÍNH TOÁN</p>
+                        <div class="tools-grid">
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-calculator"></i>Lương Gross → Net</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-receipt"></i>Thuế TNCN</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-percent"></i>Lãi kép</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-shield"></i>Bảo hiểm xã hội (rút 1 lần)</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-hand-holding-medical"></i>Bảo hiểm thất nghiệp</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-piggy-bank"></i>Kế hoạch tiết kiệm</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-mobile-screen-button"></i> Mobile App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-box">
+                <p class="inner-tag-menu tag-last">Hành trang nghề nghiệp</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p>KHÁM PHÁ VÀ ĐỊNH HƯỚNG</p>
+                        <ul>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-compass"></i>Định hình tương lai</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-user-tie"></i>Mẹo săn việc</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-chart-line"></i>Lương & Phúc lợi</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-book"></i>Kiến thức chuyên môn</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-shield-halved"></i>Chuẩn bị nghề nghiệp</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-users"></i>Xu hướng tuyển dụng</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Thêm phần Bài viết nổi bật -->
+                    <div class="dropdown-section">
+                        <p>BÀI VIẾT NỔI BẬT</p>
+                        <div class="featured-articles">
+                            <!-- Bài viết nổi bật 1 -->
+                            <div class="featured-article">
+                                <div class="article-image">
+                                    <img src="../assets/image/BLOG/NoiBat.png" alt="">
+                                </div>
+                                <div class="article-content">
+                                    <h3>Tôi nộp 23 hồ sơ, đều bị từ chối vì là người khuyết tật</h3>
+                                    <p>Bài viết kể về anh Trần Thành Trung, một người bị bại não bẩm sinh, đã nộp 23 bộ hồ sơ xin việc nhưng đều bị từ chối do nhà tuyển dụng cho...</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Bài viết nổi bật 2 -->
+                            <div class="featured-article">
+                                <div class="article-image">
+                                    <img src="../assets/image/BLOG/NoiBat_1.png" alt="">
+                                </div>
+                                <div class="article-content">
+                                    <h3>Tạo cơ hội cho người khuyết tật tìm công việc phù hợp</h3>
+                                    <p>Bài báo chia sẻ về anh Mai Văn Hải, một người khuyết tật vận động, đã học marketing bán hàng qua livestream và các kỹ năng như...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="view-more">
+                                <a href="../index/blog.html" target="_blank">Xem thêm bài viết nổi bật <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-btn">
+           <div class="inner-btn">
+                <a href="../index/Login.html" class="btn-link">
+                    <button class="sigin-btn">
+                        Đăng nhập
+                    </button>
+                </a>
+                <a href="../index/Register.html" class="btn-link">
+                    <button class="sigup-btn">
+                        Đăng ký
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- END OF HEADER  -->
+
+
+
+<!-- SEARCH BAR  -->
+
+<div class="search-bar">
+    <div class="container">
+        <div class="box-search">
+            <div class="category">
+                <i class="fa-solid fa-bars"></i>
+                <select name="category-works" id="category-works" class="select-catgory">
+                    <option value="all">Tất cả nghề</option>
+                    <option value="it">Công nghệ thông tin</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="finance">Tài chính - Ngân hàng</option>
+                    <option value="hr">Nhân sự</option>
+                    <option value="sales">Bán hàng</option>
+                    <option value="design">Thiết kế</option>
+                    <option value="logistics">Logistics</option>
+                    <option value="education">Giáo dục</option>
+                </select>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div class="group-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="enter-box" placeholder="Vị trí tuyển dụng" id="search-input">
+                <i class="fa-solid fa-delete-left"></i>
+            </div>
+            <div class="location-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <select name="location-work" id="location-work">
+                    <option value="all">Tất cả địa điểm</option>
+                    <option value="Hà Nội">Hà Nội</option>
+                    <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                    <option value="Đà Nẵng">Đà Nẵng</option>
+                    <option value="Nha Trang">Nha Trang</option>
+                    <option value="Cần Thơ">Cần Thơ</option>
+                    <option value="Đà Lạt">Đà Lạt</option>
+                    <option value="Hải Phòng">Hải Phòng</option>
+                    <option value="Huế">Huế</option>
+                    <option value="Vũng Tàu">Vũng Tàu</option>
+                    <option value="Quảng Ninh">Quảng Ninh</option>
+                    <option value="Bắc Ninh">Bắc Ninh</option>
+                    <option value="Thái Nguyên">Thái Nguyên</option>
+                </select>
+                <i class="fa-solid fa-angle-down"></i>
+
+            </div>
+            <div class="search-btn">
+                <button>Tìm kiếm</button>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- END OF SEARCH BAR   -->
+
+<div class="bread-crumb-detail" data-aos="fade-down" data-aos-once="true" data-aos-duration="600">
+    <div class="container">
+        <div class="bread-crumb">
+            <ul class="nav">
+                <li>Trang chủ</li>
+                <li><i class="fa-solid fa-angle-right"></i></li>
+                <li>Việc làm</li>
+                <li><i class="fa-solid fa-angle-right"></i></li>
+                <li>Tìm việc làm</li>
+                <li><i class="fa-solid fa-angle-right"></i></li>
+                <li> Tuyển Human Resource Manager/ Trưởng Phòng Hành Chính - Nhân Sự Tại Hà Nội</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- JOB DETAIL INFO -->
+<div class="container">
+    <div class="row section-1">
+        <div class="col-xl-9 col-md-12 col-sm-12 left-site" data-aos="fade-up" data-aos-once="true">
+            <div class="job-detail-info">
+                <div class="info-title">
+                    <div class="header-title">
+                        Human Resource Manager/ Trưởng Phòng Hành Chính - Nhân Sự Tại Hà Nội
+                    </div>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div class="info-section">
+                    <div class="item-list">
+                        <div class="item-salary" data-aos="fade-up" data-aos-once="true" data-aos-delay="100">
+                            <div class="icon-info">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-title">
+                                    Mức lương
+                                </div>
+                                <div class="content-value">
+                                    Thoả thuận
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="item-location" data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
+                            <div class="icon-info">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-title">
+                                    Địa điểm
+                                </div>
+                                <div class="content-value">
+                                    Hà Nội
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="item-exp" data-aos="fade-up" data-aos-once="true" data-aos-delay="300">
+                            <div class="icon-info">
+                                <i class="fa-solid fa-hourglass"></i>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-title">
+                                    Kinh nghiệm
+                                </div>
+                                <div class="content-value">
+                                    3 năm   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="expire-block">
+                        <div class="job-expire">
+                            <div class="icon-clock">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <span class="date-expire">
+                                Hạn nộp hồ sơ: 30/12/2025
+                            </span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="btn-apply-cur" data-aos="fade-up" data-aos-once="true" data-aos-delay="400">
+                    <button class="apply-now">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Ứng tuyển ngay
+                    </button>
+        
+                    <div class="save-news">
+                        <button class="save-now">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                            Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-12 col-sm-12 right-site" data-aos="fade-up" data-aos-once="true" data-aos-delay="100">
+            <div class="detail-company">
+                <div class="header-company">
+                    <div class="avt-company">
+                        <img src="https://cdn-new.topcv.vn/unsafe/80x/https://static.topcv.vn/company_logos/qs139ky6DXh9mWm5pvj8DNhReY8LF5Mf_1744172710____25209ae3fe16e22c0e03878bdff5ce37.jpg" alt="" class="icon-company">
+                    </div>
+                    <div class="company-name">
+                        CÔNG TY TNHH WELAST
+                    </div>
+                </div>
+                <div class="main-company">
+                    <div class="com-scale">
+                        <div class="com-title">
+                            <i class="fa-solid fa-person"></i>
+                            Quy mô công ty:
+                        </div>
+                        <div class="com-val">
+                            25-99 nhân viên
+                        </div>
+                    </div>
+                    <div class="com-field">
+                        <div class="com-title">
+                            <i class="fa-solid fa-cube"></i>
+                            Lĩnh vực:
+                        </div>
+                        <div class="com-val">
+                            Thương mại điện tử
+                        </div>
+                    </div>
+                    <div class="com-loc">
+                        <div class="com-title">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            Địa điểm:
+                        </div>
+                        <div class="com-val">
+                            289A Khuất Duy Tiến, Thanh Xuân, Hà Nội 
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="company-link">
+                    <a href="https://www.facebook.com/welast.vn/" class="link">
+                        Xem trang công ty
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END JOB DETAIL INFO  -->
+
+    <div class="container">
+        <div class="infomation-rent">
+            <div class="title-section">
+                <div class="title">
+                    Chi tiết tuyển dụng
+                </div>
+                <div class="notify-work">
+                    <button class="notify-btn">
+                        <i class="fa-solid fa-bell"></i>
+                        Thông báo việc làm tương tự
+                    </button>
+                </div>
+            </div>
+            <div class="job-tag">
+                <div class="tag-link">
+                    Chuyên môn trưởng phòng nhân sự
+                </div>
+            </div>
+            <div class="job-desc">
+                <h3>Mô tả công việc</h3>
+                <b>We’re looking for an HR Manager. This role is
+                     equivalent to a founding HR position and reports directly to the board of executives. 
+                </b>
+                <b>
+                    Our team is young, fast-growing, and made up of 60+ curious, hardworking individuals. 
+                    As we scale, we’re looking for someone to help build a strong, people-first culture and lay the foundation for a high-performing organization. 
+                </b>
+                <b>
+                    You’ll lead both strategy and execution, from owning core HR systems like onboarding, performance management, internal communications, and skills training.
+                     You’ll also manage compensation and benefits, ensure compliance with labor laws, and implement reliable systems for maintaining employee data. 
+                </b>
+                <b>
+                    This is a rare opportunity to build from the ground up. We’re looking for a hands-on 
+                    leader who brings structure to ambiguity, listens well, and leads by doing, not by pointing fingers. 
+                </b>
+                <b>
+                    If you excel in fast-moving environments, 
+                    can bring clarity to chaos, and know how to build lean, practical solutions that actually fit a startup’s needs, we’d love to meet you.
+                </b>
+                <b>
+                    This is a rare opportunity to build from the ground up. We’re looking for a hands-on leader who brings structure to ambiguity, listens well, and leads by doing, not by pointing fingers.
+
+                    If you excel in fast-moving environments, can bring clarity to chaos, and know how to build lean, practical solutions that actually fit a startup’s needs, we’d love to meet you.
+                </b>
+
+                <b>
+                    Yêu cầu ứng viên
+                </b>
+
+                <p>
+                    
+                Bachelor’s degree in Human Resources, Business Administration, or a related field
+
+                In-depth knowledge of Vietnam’s labor laws, personal income tax regulations, and social insurance policies
+
+                5–7 years of HR generalist experience, including at least 3 years in a managerial role
+
+                Proven ability to source and hire senior and leadership-level talent
+
+                Solid understanding of recruiting channels and talent markets, particularly in Hanoi
+
+                Experience in ecommerce tech startups is a strong plus
+
+                Skilled in using workflow and collaboration tools such as Lark Suite
+
+                Experience with HRIS, ATS, or other HR technologies is a plus, but not required
+
+                Demonstrated experience building and executing employer branding strategies
+
+                Excellent interpersonal and collaboration skills, with the ability to influence stakeholders across all levels
+
+                High emotional intelligence and sound judgment, with the discretion to handle sensitive matters
+
+                Strong business acumen, analytical thinking, and negotiation skills.
+
+                </p>
+
+                <b>
+                    Quyền lợi
+                </b>
+
+                <p>
+                    
+                Competitive salary and performance-based incentives
+
+                12 days of paid annual leave
+
+                13th-month salary bonus
+
+                Team-building activities and company events
+
+                Personal laptop provided
+
+                Additional benefits in accordance with company policies and Vietnam Labor Law.
+
+                </p>
+
+                <b>
+                    Địa điểm làm việc
+                </b>
+
+                <p>
+                    
+                    - Hà Nội: Chung cư Vinaconex 1, ngõ 289A Khuất Duy Tiến, phường Trung Hòa, Thanh Xuân
+                    - Hà Nội: Chung cư Vinaconex 1, ngõ 289A Khuất Duy Tiến, phường Trung Hòa, Cầu Giấy
+
+                </p>
+
+                <b>
+                    Cách thức ứng tuyển
+                </b>
+
+                <p>
+                    Ứng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ngay dưới đây. 
+                </p>
+            </div>
+            <div class="btn-apply">
+                <button class="apply-now">
+                    Ứng tuyển ngay
+                </button>
+                <button class="save">
+                    Lưu tin
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- FOOTER  -->
+
+<footer class="ft bg-dark text-light pt-5 pb-4 animate__animated animate__fadeInUp">
+    <div class="container">
+        <div class="row">
+            <!-- Logo & mô tả -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <img src="../assets/image/logo.png" alt="Logo" class="ft-logo mb-3">
+                <p>Nền tảng tìm việc làm toàn diện dành cho người khuyết tật. Kết nối, đồng hành và phát triển.
+                </p>
+                <div class="ft-social mt-3">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Giới thiệu -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="ft-title">Giới thiệu</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Sứ mệnh</a></li>
+                    <li><a href="#">Tầm nhìn</a></li>
+                    <li><a href="#">Đội ngũ</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                </ul>
+            </div>
+
+            <!-- Dịch vụ -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="ft-title">Dịch vụ</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Tìm việc</a></li>
+                    <li><a href="#">Đăng tuyển</a></li>
+                    <li><a href="#">Hồ sơ ứng viên</a></li>
+                    <li><a href="#">Tư vấn nghề</a></li>
+                </ul>
+            </div>
+
+            <!-- Tài nguyên -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="ft-title">Tài nguyên</h6>
+                <ul class="list-unstyled">
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Hướng dẫn truy cập</a></li>
+                    <li><a href="#">Blog kỹ năng</a></li>
+                    <li><a href="#">Video hướng dẫn</a></li>
+                </ul>
+            </div>
+
+            <!-- Hỗ trợ -->
+            <div class="col-lg-3 col-md-12 mb-4">
+                <h6 class="ft-title">Liên hệ</h6>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i> 123 Lê Duẩn, Đà Nẵng</li>
+                    <li><i class="fas fa-envelope me-2"></i> support@timvieckn.com</li>
+                    <li><i class="fas fa-phone me-2"></i> 0901 234 567</li>
+                    <li><i class="fas fa-clock me-2"></i> T2 - T6: 8h - 17h</li>
+                </ul>
+            </div>
+        </div>
+</footer>
+
+<!-- END OF FOOTER  -->
+
+    <script src="../script/job-detail.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

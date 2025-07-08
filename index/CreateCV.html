@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo CV</title>
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/createCV.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+<body>
+<!-- HEADER  -->
+
+ <div class="header">
+    <div class="inner-header">
+        <div class="inner-logo">
+            <a href="index.html">
+                <img src="/assets/image/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="inner-menu">
+            <div class="inner-box">
+                <p class="inner-tag-menu">Cơ hội nghề nghiệp</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p>Việc làm</p>
+                        <ul>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-search"></i>Khám phá việc làm</a></li>
+                            <li><a href="../index/jobresearch.html"><i class="fa-regular fa-bookmark"></i>Tìm kiếm việc làm nâng cao</a></li>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-briefcase"></i>Gợi ý việc làm</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section">
+                        <p>VIỆC LÀM THEO VỊ TRÍ</p>
+                        <ul>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-user-tie"></i> Việc làm Nhân viên kinh doanh</a></li>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-calculator"></i> Việc làm Kế toán</a></li>
+                            <li><a href="../index/ViecLamPhuHop.html"><i class="fa-solid fa-bullhorn"></i> Việc làm Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-box">
+                <p class="inner-tag-menu">Xây dựng CV</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p class="dropdown-header-special">Tạo CV</p> 
+                        <ul>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-palette"></i> Mẫu CV theo style </a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-file-lines"></i> Mẫu CV Đơn giản</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-star"></i> Mẫu CV Ấn tượng</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-user-tie"></i> Mẫu CV Chuyên nghiệp</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-desktop"></i> Mẫu CV Hiện đại</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section" style="margin-top: 28px;">
+                        <!-- <p>CÔNG CỤ CV</p>  -->
+                        <ul class="dropdown-submenu-right">
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-folder-open"></i> Quản lý CV</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-upload"></i> Tải CV lên</a></li>
+                            <li><a href="../index/introduceCr.html"><i class="fa-solid fa-book-open"></i> Hướng dẫn viết CV</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-envelope-open-text"></i> Quản lý Cover Letter</a></li>
+                            <li><a href="../index/CreateCV.html"><i class="fa-solid fa-file-signature"></i> Mẫu Cover Letter</a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            <div class="inner-box">
+                <p class="inner-tag-menu">Công cụ hỗ trợ</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p>KHÁM PHÁ BẢN THÂN</p>
+                        <ul>
+                            <li><a href="../index/mulitichoice.html"><i class="fa-solid fa-brain"></i>Nâng cao kỹ năng</a></li>
+                            <li><a href="../index/Achievement.html"><i class="fa-solid fa-user-graduate"></i>Trắc nghiệm Trí thông minh</a></li>
+                            <li><a href="../index/checkskills.html"><i class="fa-solid fa-chart-line"></i>Kỹ năng SuperStars</a></li>
+                            <li><a href="../index/mulitichoice.html"><i class="fa-solid fa-graduation-cap"></i>Khóa học trực tuyến</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown-section">
+                        <p>CÔNG CỤ TÍNH TOÁN</p>
+                        <div class="tools-grid">
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-calculator"></i>Lương Gross → Net</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-receipt"></i>Thuế TNCN</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-percent"></i>Lãi kép</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-shield"></i>Bảo hiểm xã hội (rút 1 lần)</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-hand-holding-medical"></i>Bảo hiểm thất nghiệp</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-piggy-bank"></i>Kế hoạch tiết kiệm</a>
+                            <a href="../index/mulitichoice.html" class="tool-item"><i class="fa-solid fa-mobile-screen-button"></i> Mobile App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-box">
+                <p class="inner-tag-menu tag-last">Hành trang nghề nghiệp</p>
+                <i class="fa-solid fa-angle-down i-header"></i>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section">
+                        <p>KHÁM PHÁ VÀ ĐỊNH HƯỚNG</p>
+                        <ul>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-compass"></i>Định hình tương lai</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-user-tie"></i>Mẹo săn việc</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-chart-line"></i>Lương & Phúc lợi</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-book"></i>Kiến thức chuyên môn</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-shield-halved"></i>Chuẩn bị nghề nghiệp</a></li>
+                            <li><a href="../index/blog.html"><i class="fa-solid fa-users"></i>Xu hướng tuyển dụng</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Thêm phần Bài viết nổi bật -->
+                    <div class="dropdown-section">
+                        <p>BÀI VIẾT NỔI BẬT</p>
+                        <div class="featured-articles">
+                            <!-- Bài viết nổi bật 1 -->
+                            <div class="featured-article">
+                                <div class="article-image">
+                                    <img src="../assets/image/BLOG/NoiBat.png" alt="">
+                                </div>
+                                <div class="article-content">
+                                    <h3>Tôi nộp 23 hồ sơ, đều bị từ chối vì là người khuyết tật</h3>
+                                    <p>Bài viết kể về anh Trần Thành Trung, một người bị bại não bẩm sinh, đã nộp 23 bộ hồ sơ xin việc nhưng đều bị từ chối do nhà tuyển dụng cho...</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Bài viết nổi bật 2 -->
+                            <div class="featured-article">
+                                <div class="article-image">
+                                    <img src="../assets/image/BLOG/NoiBat_1.png" alt="">
+                                </div>
+                                <div class="article-content">
+                                    <h3>Tạo cơ hội cho người khuyết tật tìm công việc phù hợp</h3>
+                                    <p>Bài báo chia sẻ về anh Mai Văn Hải, một người khuyết tật vận động, đã học marketing bán hàng qua livestream và các kỹ năng như...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="view-more">
+                                <a href="../index/blog.html" target="_blank">Xem thêm bài viết nổi bật <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-btn">
+           <div class="inner-btn">
+                <a href="../index/Login.html" class="btn-link">
+                    <button class="sigin-btn">
+                        Đăng nhập
+                    </button>
+                </a>
+                <a href="../index/Register.html" class="btn-link">
+                    <button class="sigup-btn">
+                        Đăng ký
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- END OF HEADER  -->
+    <!-- ss1 -->
+   <!-- ss1 -->
+<div class="section-1" data-aos="fade" data-aos-duration="1200" data-aos-easing="ease-in-out">
+    <div class="container">
+        <h1 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-in-out">Mẫu CV xin việc tiếng Việt Đơn giản chuẩn 2025</h1>
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-in-out">Cùng SuperStars biến chiếc CV đơn điệu trở thành sân khấu biểu diễn độc nhất của riêng bạn với những mẫu CV từ đơn giản, chuyên nghiệp tới sáng tạo nhất được thiết kế riêng cho từng ngành nghề. Đặc biệt, với hướng dẫn viết CV chi tiết theo từng vị trí, SuperStars sẽ giúp bạn nổi bật giữa hàng ngàn ứng viên, chinh phục nhà tuyển dụng và chạm tay tới công việc trong mơ!</p>
+        <div class="row" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-in-out">
+            <div class="col-2">
+                <select class="filter-item">
+                    <option>Tiếng Việt</option>
+                    <option>Tiếng Anh</option>
+                </select>
+            </div>
+            <div class="col-2">
+                <select class="filter-item">
+                    <option>Đơn giản</option>
+                    <option>Chuyên nghiệp</option>
+                </select>
+            </div>
+            <div class="col-4">
+            </div>
+            <div class="col-2">
+                <div class="filter-item-right">     
+                    <label><input type="radio" name="filter" value="new" checked> Mới cập nhật</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="filter-item-right">     
+                    <label><input type="radio" name="filter" value="new" checked> Phổ biến</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="cv-grid">
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv1.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv2.png" alt="Mẫu CV Tham vọng">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Kinh nghiệm</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+9</span>
+                    </div>
+                    <h3>CV Kinh Nghiệm Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv3.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv4.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv5.png" alt="Mẫu CV Tham vọng">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Kinh nghiệm</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+9</span>
+                    </div>
+                    <h3>CV Kinh Nghiệm Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv6.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv7.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv8.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv9.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv10.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv11.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+            <div class="cv-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-in-out">
+                <img src="/assets/image/CreateCV/cv/cv12.png" alt="Mẫu CV 1">
+                <button class="cv-button">Dùng mẫu</button>
+                <div class="cv-info">
+                    <div class="tag-list">
+                        <span class="tag-item">Mới</span>
+                        <span class="tag-item">Đơn giản</span>
+                        <span class="tag-item">+8</span>
+                    </div>
+                    <h3>CV Mới Đơn Giản</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end ss1 -->
+    <!-- ss2 -->
+    <div class="section-2">
+        <div class="container">
+            <div class="banner">
+                <div class="box-left">
+                    <h2 class="banner-title">Tham khảo cách viết CV</h2>
+                    <p class="banner-subtitle">từ 20+ Mẫu CV ứng tuyển mới nhất 2025</p>
+                    <div class="btn-list">
+                        <button class="btn-item active" data-src="../assets/image/CreateCV/ct_cv1.png">Nhân Viên Kinh doanh</button>
+                        <button class="btn-item" data-src="../assets/image/CreateCV/ct_cv2.png">Lập Trình Viên</button>
+                        <button class="btn-item" data-src="../assets/image/CreateCV/ct_cv3.png">Nhân Viên Kế Toán</button>
+                    </div>
+                    <button class="btn-all">Xem tất cả →</button>
+                </div>
+                
+                <div class="box-right">
+                    <div class="img-stack">
+                        <img src="../assets/image/CreateCV/ct_cv1.png" alt="" class="stack top">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ss2 -->
+
+    <!-- ss3 -->
+    <div class="section-3">
+        <div class="container">    
+            <div class="cv-grid">
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv13.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv14.png" alt="Mẫu CV Tham vọng">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Kinh nghiệm</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+9</span>
+                        </div>
+                        <h3>CV Kinh Nghiệm Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv15.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv16.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv17.png" alt="Mẫu CV Tham vọng">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Kinh nghiệm</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+9</span>
+                        </div>
+                        <h3>CV Kinh Nghiệm Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv18.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv19.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv20.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv21.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ss3 -->
+
+    <!-- ss5 -->
+    <div class="section-5">
+            <section class="menu-section">
+                <div class="menu-header">
+                    <h2 class="title">Tham khảo cách viết CV</h2>
+                    <p class="subtitle">từ 50+ Mẫu CV ứng tuyển mới nhất 2025</p>
+                </div>
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv1.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Phát triển phần mềm</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv10.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Lập trình</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv12.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Sáng tạo nội dung</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv14.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Phân tich dữ liệu</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv16.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Kinh doanh</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv18.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Nhiếp ảnh gia</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv20.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Sáng tạo nội dung</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv21.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Cải thiện giao tiếp</figcaption>
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="cv-figure">
+                                <img src="../assets/image/CreateCV/cv/cv7.png" alt="Mẫu CV">
+                                <figcaption class="tag-item">Thiết kế độ họa</figcaption>
+                            </figure>
+                        </div>
+
+                    </div>
+                <!-- If we need pagination -->
+                
+                <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                
+                </div>
+            </section>
+    </div>
+    <!-- end ss5 -->
+    <!-- ss6 -->
+     <div class="section-3">
+        <div class="container">    
+            <div class="cv-grid">
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv22.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv23.png" alt="Mẫu CV Tham vọng">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Kinh nghiệm</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+9</span>
+                        </div>
+                        <h3>CV Kinh Nghiệm Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv24.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv25.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv26.png" alt="Mẫu CV Tham vọng">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Kinh nghiệm</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+9</span>
+                        </div>
+                        <h3>CV Kinh Nghiệm Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv27.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv28.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv29.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv30.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv31.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv32.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+                <div class="cv-card">
+                    <img src="../assets/image/CreateCV/cv/cv33.png" alt="Mẫu CV 1">
+                    <button class="cv-button">Dùng mẫu</button>
+                    <div class="cv-info">
+                        <div class="tag-list">
+                            <span class="tag-item">Mới</span>
+                            <span class="tag-item">Đơn giản</span>
+                            <span class="tag-item">+8</span>
+                        </div>
+                        <h3>CV Mới Đơn Giản</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end ss6 -->
+    <!-- footer  -->
+    <footer class="ft bg-dark text-light pt-5 pb-4 animate__animated animate__fadeInUp">
+        <div class="container">
+            <div class="row">
+                <!-- Logo & mô tả -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="../assets/image/logo.png" alt="Logo" class="ft-logo mb-3">
+                    <p>Nền tảng tìm việc làm toàn diện dành cho người khuyết tật. Kết nối, đồng hành và phát triển.
+                    </p>
+                    <div class="ft-social mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Giới thiệu -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="ft-title">Giới thiệu</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sứ mệnh</a></li>
+                        <li><a href="#">Tầm nhìn</a></li>
+                        <li><a href="#">Đội ngũ</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                    </ul>
+                </div>
+
+                <!-- Dịch vụ -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="ft-title">Dịch vụ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Tìm việc</a></li>
+                        <li><a href="#">Đăng tuyển</a></li>
+                        <li><a href="#">Hồ sơ ứng viên</a></li>
+                        <li><a href="#">Tư vấn nghề</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tài nguyên -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="ft-title">Tài nguyên</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Hướng dẫn truy cập</a></li>
+                        <li><a href="#">Blog kỹ năng</a></li>
+                        <li><a href="#">Video hướng dẫn</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hỗ trợ -->
+                <div class="col-lg-3 col-md-12 mb-4">
+                    <h6 class="ft-title">Liên hệ</h6>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Lê Duẩn, Đà Nẵng</li>
+                        <li><i class="fas fa-envelope me-2"></i> support@timvieckn.com</li>
+                        <li><i class="fas fa-phone me-2"></i> 0901 234 567</li>
+                        <li><i class="fas fa-clock me-2"></i> T2 - T6: 8h - 17h</li>
+                    </ul>
+                </div>
+            </div>
+    </footer>
+
+    <!-- end of footer   -->
+     <!--support box-->
+     
+
+        <div class="support-box-container">
+            <div class="support-container">
+                <div class="support-button">
+                    <i class="fas fa-heart"></i>
+                    <div class="badge">0</div>
+                </div>
+                <div class="support-button">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="support-button">
+                    <i class="fas fa-comment-dots"></i>
+                </div>
+                
+                <div class="support-button">
+                    <i class="fas fa-headset"></i>
+                </div>
+               
+                    
+                </div>
+            </div>
+
+        </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../script/createCV.js"></script>
+</body>
+</html>
