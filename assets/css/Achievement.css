@@ -1331,7 +1331,7 @@ textarea:focus {
   display: flex;
   align-items: center;
   /* Thay url(...) bằng ảnh background đã ghép sẵn cards của bạn */
-  background: url("/assets/image/BLOG/ss7.png") no-repeat center center/cover;
+  background: url("../assets/image/BLOG/ss7.png") no-repeat center center/cover;
   border-radius: 8px;
   padding: 40px;
   overflow: hidden;
