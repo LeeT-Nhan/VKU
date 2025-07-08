@@ -2262,7 +2262,7 @@
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   overflow: hidden;
-  background-image: url("/assets/image/Index/BG_ThiTruong.png");
+  background-image: url("../assets/image/Index/BG_ThiTruong.png");
   background-color: #f9f9f9;
 }
 
